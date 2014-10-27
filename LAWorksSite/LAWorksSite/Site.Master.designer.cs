@@ -13,31 +13,31 @@ namespace LAWorksSite {
     public partial class SiteMaster {
         
         /// <summary>
-        /// Button1 control.
+        /// ID_JobSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ID_JobSearch;
         
         /// <summary>
-        /// Button2 control.
+        /// ID_Resume control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button ID_Resume;
         
         /// <summary>
-        /// Button3 control.
+        /// ID_Links control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button ID_Links;
         
         /// <summary>
         /// MainContent control.

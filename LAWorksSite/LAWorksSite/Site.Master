@@ -15,9 +15,9 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style type="text/css">
-        .auto-style1 {
-            width: 181px;
-            height: 72px;
+        .auto-style2 {
+            width: 264px;
+            height: 98px;
         }
     </style>
 
@@ -28,21 +28,16 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                    </button>
-                    &nbsp;<a class="navbar-brand" runat="server" href="~/"><img alt="LAWorks" class="auto-style1" src="file://Images/LAWorksLogo.png" /></a>
-
-                </div>
+                    &nbsp;<img alt="" class="auto-style2" src="Images/Louisiana-Workforce-Commission.jpg" /></div>
             </div>
         </div>
 
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Job Search" href="JobSearch.aspx"/>
-        <asp:Button ID="Button2" runat="server" Text="Résumé Help" href="Resume.aspx"/>
-        <asp:Button ID="Button3" runat="server" Text="Useful Links" />
+        <asp:Button ID="ID_JobSearch" runat="server" Text="Job Search" href="JobSearch.aspx"/>
+        <asp:Button ID="ID_Resume" runat="server" Text="Résumé Help" href="Resume.aspx"/>
+        <asp:Button ID="ID_Links" runat="server" Text="Useful Links" />
         <br />
         <br />
         <div class="container body-content">
