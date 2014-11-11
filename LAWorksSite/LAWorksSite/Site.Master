@@ -37,7 +37,6 @@
         <br />
         <asp:Button ID="ID_JobSearch" runat="server" Text="Job Search" href="JobSearch.aspx"/>
         <asp:Button ID="ID_Resume" runat="server" Text="Résumé Help" href="Resume.aspx"/>
-        <asp:Button ID="ID_Links" runat="server" Text="Useful Links" />
         <br />
         <br />
         <div class="container body-content">
