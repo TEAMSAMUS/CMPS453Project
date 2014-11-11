@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - LAWorks</title>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -31,23 +29,21 @@
                     &nbsp;<img alt="" class="auto-style2" src="Images/Louisiana-Workforce-Commission.jpg" /></div>
             </div>
         </div>
-
+       <! <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        </asp:PlaceHolder> 
         <br />
         <br />
         <br />
-        <asp:Button ID="ID_JobSearch" runat="server" Text="Job Search" href="JobSearch.aspx"/>
-        <asp:Button ID="ID_Resume" runat="server" Text="Résumé Help" href="Resume.aspx"/>
         <br />
         <br />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                <p>
-                    Info</p>
-                <p>
-                    links like on <a href="http://www.laworks.net/Workers.asp">http://www.laworks.net/Workers.asp</a> ?</p>
+                <asp:Button ID="ID_JobSearch" runat="server" Text="Job Search" href="JobSearch.aspx"/>
             </asp:ContentPlaceHolder>
             <br />
             <br />
+        <asp:Button ID="ID_Resume" runat="server" Text="Résumé Help" href="Resume.aspx"/>
             <br />
             <br />
             <br />
