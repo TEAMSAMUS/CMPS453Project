@@ -39,11 +39,8 @@
         <br />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                <asp:Button ID="ID_JobSearch" runat="server" Text="Job Search" href="JobSearch.aspx"/>
             </asp:ContentPlaceHolder>
             <br />
-            <br />
-        <asp:Button ID="ID_Resume" runat="server" Text="Résumé Help" href="Resume.aspx"/>
             <br />
             <br />
             <br />

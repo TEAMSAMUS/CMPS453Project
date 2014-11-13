@@ -13,5 +13,10 @@ namespace LAWorksSite
         {
 
         }
+
+        protected void ID_JobSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
