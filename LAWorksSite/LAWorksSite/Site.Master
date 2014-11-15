@@ -40,6 +40,10 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+             <div align="center">
+                      <asp:LinkButton ID="LAWorksSite" runat="server" OnClientClick="window.open('http://www.laworks.net', 'OtherPage');">Louisiana WorkForce</asp:LinkButton>
+                      <asp:LinkButton ID="ULSite" runat="server" OnClientClick="window.open('http://www.louisiana.edu', 'OtherPage');">| University of Louisiana Lafayette</asp:LinkButton>
+                 </div>
             <br />
             <br />
             <br />

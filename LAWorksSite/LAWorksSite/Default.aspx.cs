@@ -16,7 +16,12 @@ namespace LAWorksSite
 
         protected void ID_JobSearch_Click(object sender, EventArgs e)
         {
+            Response.Redirect("JobSearch.aspx");
+        }
 
+        protected void ID_Resume_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Resume.aspx");
         }
     }
 }
