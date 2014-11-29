@@ -8,6 +8,7 @@
         <asp:Button ID="ID_Resume" runat="server" Text="Resume Builder" href="Resume.aspx" OnClick="ID_Resume_Click" Width="126px"/>
         <br />
         <br />
+        <asp:Button ID="ID_Upload" runat="server" Text="Upload Resume" href="Resume.aspx" OnClick="ID_Upload_Click" Width="126px"/>
         <br />
         <br />
         <br />

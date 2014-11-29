@@ -6,6 +6,13 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Net;
+using System.Text.RegularExpressions;
+
 
 namespace LAWorksSite
 {
@@ -69,7 +76,36 @@ namespace LAWorksSite
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            WebClient www = new WebClient();
+            //
+            string site = www.DownloadString("http://www.laworks.net/CareerSolutions.asp");//http://www.laworks.net/Stars/");
+
+            foreach (string[] text_0_HREF_1 in getLinks(site))
+            {
+                Debug.WriteLine(text_0_HREF_1[0]);
+                Debug.WriteLine(text_0_HREF_1[1]);
+            }
+
         }
+
+        //returns a list of 
+        //string[2] = {text, href}
+        static public List<string[]> getLinks(string file)
+        {
+            List<string[]> results = new List<string[]>();
+            MatchCollection matchCollection = Regex.Matches(file, @"(<a.*?>.*?</a>)", RegexOptions.Singleline);
+            foreach (Match match in matchCollection)
+            {
+                string[] text0HREF1 = new string[2];
+                string value = match.Groups[1].Value;
+                Match matchHref = Regex.Match(value, @"href=\""(.*?)\""", RegexOptions.Singleline);
+                if (matchHref.Success) text0HREF1[1] = matchHref.Groups[1].Value;
+                text0HREF1[0] = Regex.Replace(value, @"\s*<.*?>\s*", "", RegexOptions.Singleline); ;
+                results.Add(text0HREF1);
+            }
+            return results;
+        }
+
 
         protected void GoHome_Click(object sender, EventArgs e)
         {
