@@ -11,7 +11,7 @@ namespace LAWorksSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void ID_JobSearch_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace LAWorksSite
 
         protected void ID_Upload_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Resume.aspx");
+            
         }
     }
 }
