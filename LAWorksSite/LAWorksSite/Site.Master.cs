@@ -83,10 +83,56 @@ namespace LAWorksSite
 
             foreach (string[] text_0_HREF_1 in getLinks(site))
             {
-                Debug.WriteLine(text_0_HREF_1[0]);
+                //Debug.WriteLine(text_0_HREF_1[0]);
                 Debug.WriteLine(text_0_HREF_1[1]);
             }
 
+            //Debug.WriteLine(GetDivElements());
+
+        }
+        static string[] _words = { "Sam", "Dot", "Perls" };
+
+
+
+        static string GetDivElements()
+        {
+            // Initialize StringWriter instance.
+            StringWriter stringWriter = new StringWriter();
+
+            // Put HtmlTextWriter in using block because it needs to call Dispose.
+            using (HtmlTextWriter writer = new HtmlTextWriter(stringWriter))
+            {
+                // Loop over some strings.
+                foreach (var word in _words)
+                {
+                    // Some strings for the attributes.
+                    string classValue = "ClassName";
+                    string urlValue = "http://www.dotnetperls.com/";
+                    string imageValue = "image.jpg";
+
+                    // The important part:
+                    writer.AddAttribute(HtmlTextWriterAttribute.Class, classValue);
+                    writer.RenderBeginTag(HtmlTextWriterTag.Div); // Begin #1
+
+                    writer.AddAttribute(HtmlTextWriterAttribute.Href, urlValue);
+                    writer.RenderBeginTag(HtmlTextWriterTag.A); // Begin #2
+
+                    writer.AddAttribute(HtmlTextWriterAttribute.Src, imageValue);
+                    writer.AddAttribute(HtmlTextWriterAttribute.Width, "60");
+                    writer.AddAttribute(HtmlTextWriterAttribute.Height, "60");
+                    writer.AddAttribute(HtmlTextWriterAttribute.Alt, "");
+
+                    writer.RenderBeginTag(HtmlTextWriterTag.Img); // Begin #3
+                    writer.RenderEndTag(); // End #3
+
+                    writer.Write(word);
+
+                    writer.RenderEndTag(); // End #2
+                    writer.RenderEndTag(); // End #1
+                }
+            }
+            // Return the result.
+            return stringWriter.ToString();
         }
 
         //returns a list of 
