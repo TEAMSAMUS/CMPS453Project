@@ -10,7 +10,7 @@
         <br />
         <br />
         <br />
-            <asp:Table ID="Table1" runat="server" Height="255px" Width="1010px">
+            <asp:Table ID="SearchResults" runat="server" Height="255px" Width="1010px">
             </asp:Table>
         <br />
         <br />

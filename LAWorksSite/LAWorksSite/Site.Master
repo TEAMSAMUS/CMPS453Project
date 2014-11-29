@@ -41,13 +41,13 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
              <div align="center">
+                      <b>Main Links</b><br />
                       <asp:LinkButton ID="LAWorksSite" runat="server" OnClientClick="window.open('http://www.laworks.net', 'OtherPage');">Louisiana WorkForce</asp:LinkButton>
                       <asp:LinkButton ID="ULSite" runat="server" OnClientClick="window.open('http://www.louisiana.edu', 'OtherPage');">| University of Louisiana Lafayette</asp:LinkButton>
-                 </div>
-            <br />
-            <div align="center">
+                      <br /><br /><b>Related Links</b><br />
                       <asp:LinkButton ID="LAHireAccount" runat="server" OnClientClick="window.open('https://www.louisianaworks.net/hire/vosnet/Default.aspx', 'OtherPage');">Go to My HiRE Account</asp:LinkButton> | 
                       <asp:LinkButton ID="CareerServices" runat="server" OnClientClick="window.open('https://www.louisianaworks.net/hire/vosnet/MenuLandingPage.aspx?enc=+7ijYqb/pbmrM/FoEheZYzKCHV+pK2S8fEZwdY+SZUI=', 'OtherPage');">Career Services</asp:LinkButton> | 
+                      <br /><br /><b>Resources</b><br />
                       <asp:LinkButton ID="CareerPlanning" runat="server" OnClientClick="window.open('http://www.laworks.net/Downloads/LMI/LouisianaCareerPlanningGuide.pdf', 'OtherPage');">Career Planning Guide</asp:LinkButton> | 
                       <asp:LinkButton ID="CareerCompass" runat="server" OnClientClick="window.open('http://www.laworks.net/Downloads/LMI/CTCareerCompass2003_2004edition.pdf', 'OtherPage');">Career Compass - Finding the Right Job</asp:LinkButton>
                  </div>
