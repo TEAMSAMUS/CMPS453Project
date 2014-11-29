@@ -17,24 +17,17 @@
             width: 264px;
             height: 98px;
         }
-        .body-logobg {
-            background-color: #ffffff;
-            width: auto;
-            height: 98px;
-        }
     </style>
 
 </head>
 <body>
     <form runat="server">
 
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    &nbsp;<img alt="" class="auto-style2" src="Images/Louisiana-Workforce-Commission.jpg" />
-                    <
-                </div>
-            </div>
+            <a href="default.aspx"><img src="Images/LWC_Logo_B&W large.jpg"
+             alt="Louisiana Workforce Career Seeker Home"
+            width="150" height="75" border="0" /></a>
         </div>
        <! <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
