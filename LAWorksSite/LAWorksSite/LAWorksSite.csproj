@@ -160,8 +160,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Images\LAWorksLogo.png" />
-    <Content Include="Images\Louisiana-Workforce-Commission.jpg" />
+    <Content Include="Images\LeftBorder_5px.gif" />
+    <Content Include="Images\LWC_LOGO_B&amp;W large.jpg" />
+    <Content Include="Images\LWC_LOGO_B&amp;W small.jpg" />
+    <Content Include="Images\LWC_LOGO_color large.jpg" />
+    <Content Include="Images\LWC_LOGO_color small.jpg" />
+    <Content Include="Images\RightBorder_15px.gif" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

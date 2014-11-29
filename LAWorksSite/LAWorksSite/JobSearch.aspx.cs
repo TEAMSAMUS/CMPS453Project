@@ -14,9 +14,16 @@ namespace LAWorksSite
 
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void SearchBox_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        protected void Search_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Resume.aspx");
+
+        }
+
     }
 }

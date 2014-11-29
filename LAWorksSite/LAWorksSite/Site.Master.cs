@@ -71,6 +71,12 @@ namespace LAWorksSite
 
         }
 
+        protected void GoHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+
+        }
+
 
     }
 

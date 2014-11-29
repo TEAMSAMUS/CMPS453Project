@@ -1,9 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JobSearch.aspx.cs" Inherits="LAWorksSite.WebForm2" %>
+﻿<%@ Page Title="Job Search | Louisiana Works Career Seeker" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JobSearch.aspx.cs" Inherits="LAWorksSite.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div align="center">
         <p>
-            Search:<br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+        <asp:TextBox ID="SearchBox" runat="server" OnTextChanged="SearchBox_TextChanged"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="CommitSearch" runat="server" Text="Search" OnClick="Search_Click" />
         <br />
         <br />
         <br />
