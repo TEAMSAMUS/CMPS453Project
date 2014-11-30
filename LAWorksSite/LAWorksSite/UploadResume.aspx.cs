@@ -23,7 +23,7 @@ namespace LAWorksSite
                 try
                 {
 
-                    if (FileUploadControl.PostedFile.ContentType.Equals("application/pdf") || 
+                    if (FileUploadControl.PostedFile.ContentType.Equals("application/pdf") ||
                         FileUploadControl.PostedFile.ContentType.Equals("application/msword") ||
                         FileUploadControl.PostedFile.ContentType.Equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
                     {
@@ -45,5 +45,5 @@ namespace LAWorksSite
             }
         }
     }
-    
+
 }

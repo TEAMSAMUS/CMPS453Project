@@ -26,7 +26,7 @@ namespace LAWorksSite
 
         protected void ID_Upload_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("UploadResume.aspx");
         }
     }
 }

@@ -174,7 +174,6 @@
     <Content Include="Account\Web.config" />
     <Content Include="Resume.aspx" />
     <Content Include="JobSearch.aspx" />
-    <Content Include="WebForm3.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -358,13 +357,6 @@
     </Compile>
     <Compile Include="JobSearch.aspx.designer.cs">
       <DependentUpon>JobSearch.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
