@@ -23,29 +23,19 @@ namespace LAWorksSite
                 try
                 {
 
-                    HttpPostedFile file = FileUploadControl.PostedFile;
-                    string fileName = file.FileName;
-                    string filePath = Path.GetFullPath(fileName);
-                    string fileExtension = "";
-
-                    if (!string.IsNullOrEmpty(fileName))
-                        fileExtension = Path.GetExtension(fileName);
-
-                    StatusLabel.Text = fileExtension;
-
                     if (FileUploadControl.PostedFile.ContentType.Equals("application/pdf") || 
                         FileUploadControl.PostedFile.ContentType.Equals("application/msword") ||
                         FileUploadControl.PostedFile.ContentType.Equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
                     {
                         if (FileUploadControl.PostedFile.ContentLength < 102400)
                         {
-                            
+                            //Stuff to do file upload to LAWorks site
                             StatusLabel.Text = "Upload status: File uploaded!";
                         }
-                        else
+                        else //Else for File Size
                             StatusLabel.Text = "Upload status: The file has to be less than 100 kb!";
                     }
-                    else
+                    else //Else for File Content Type
                         StatusLabel.Text = "Upload status: Only Word/PDF files are accepted!";
                 }
                 catch (Exception ex)
