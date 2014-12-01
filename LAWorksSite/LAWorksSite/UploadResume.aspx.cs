@@ -27,13 +27,13 @@ namespace LAWorksSite
                         FileUploadControl.PostedFile.ContentType.Equals("application/msword") ||
                         FileUploadControl.PostedFile.ContentType.Equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
                     {
-                        if (FileUploadControl.PostedFile.ContentLength < 102400)
+                        if (FileUploadControl.PostedFile.ContentLength < 204800)
                         {
                             //Stuff to do file upload to LAWorks site
                             StatusLabel.Text = "Upload status: File uploaded!";
                         }
                         else //Else for File Size
-                            StatusLabel.Text = "Upload status: The file has to be less than 100 kb!";
+                            StatusLabel.Text = "Upload status: The file has to be less than 200 kb!";
                     }
                     else //Else for File Content Type
                         StatusLabel.Text = "Upload status: Only Word/PDF files are accepted!";

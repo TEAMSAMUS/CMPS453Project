@@ -181,7 +181,7 @@ namespace LAWorksSite
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             var document = new DocumentModel();
 
-            
+            document.Save("document.docx");
 
             
 

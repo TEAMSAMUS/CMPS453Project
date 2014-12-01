@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div align="center">
-        <div style="border: solid 4px; border-color: green; overflow: hidden; display: inline-table; padding-left: 25px; padding-right: 100px; text-align: left;">
+        <div style="border: solid 4px; border-color: #339933; overflow: hidden; display: inline-table; padding-left: 25px; padding-right: 100px; text-align: left;">
             <p>
                 <br />
                 Enter Job Keyword(s): 
