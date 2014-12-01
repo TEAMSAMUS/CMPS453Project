@@ -4,7 +4,21 @@
     <div align="center">
         <p>
             <br />
-            <asp:TextBox ID="SearchBox" runat="server" OnTextChanged="SearchBox_TextChanged"></asp:TextBox>
+            Keyword(s):<br />
+            <asp:TextBox ID="keyword" runat="server" OnTextChanged="SearchBox_TextChanged"></asp:TextBox>
+            <br />
+            <br />
+            Job Location:<br />
+            <asp:TextBox ID="location" runat="server" OnTextChanged="SearchBox_TextChanged"></asp:TextBox>
+            <br />
+            <br />
+            Salary Range:<br />
+            <asp:TextBox ID="salary" runat="server" OnTextChanged="SearchBox_TextChanged"></asp:TextBox>
+            <br />
+            <br />
+            Education Level:<br />
+            <asp:TextBox ID="education" runat="server" OnTextChanged="SearchBox_TextChanged"></asp:TextBox>
+            <br />
             <br />
             <br />
             <asp:Button ID="CommitSearch" runat="server" Text="Search" OnClick="Search_Click" />
