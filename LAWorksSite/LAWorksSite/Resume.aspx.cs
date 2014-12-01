@@ -1,31 +1,27 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 
 public class ResumeBuilder
 {
+    public List<Job> jobList = new List<Job>();
 
     public ResumeBuilder()
     {
 
     }
 
-    private String fNameRes;
-    public string FNameRes
+    private String nameRes;
+    public string NameRes
     {
-        get { return fNameRes; }
-        set { this.fNameRes = value; }
-    }
-
-    private String lNameRes;
-    public string LNameRes
-    {
-        get { return lNameRes; }
-        set { lNameRes = value; }
+        get { return nameRes; }
+        set { this.nameRes = value; }
     }
 
     private String addressRes1;
@@ -63,12 +59,52 @@ public class ResumeBuilder
         set { emailRes = value; }
     }
 
-    private String expRes;
-    public string ExpRes
+
+}
+
+public class Job
+{
+
+    public Job()
     {
-        get { return expRes; }
-        set { expRes = value; }
+
     }
+
+    private String jobTitle;
+    public string JobTitle
+    {
+        get { return jobTitle; }
+        set { jobTitle = value; }
+    }
+
+    private String jobDuties;
+    public string JobDuties
+    {
+        get { return jobDuties; }
+        set { jobDuties = value; }
+    }
+
+    private String companyName;
+    public string CompanyName
+    {
+        get { return companyName; }
+        set { companyName = value; }
+    }
+
+    private String jobCityState;
+    public string JobCityState
+    {
+        get { return jobCityState; }
+        set { jobCityState = value; }
+    }
+
+    private String jobYears;
+    public string JobYears
+    {
+        get { return jobYears; }
+        set { jobYears = value; }
+    }
+
 }
 
 namespace LAWorksSite
@@ -85,15 +121,56 @@ namespace LAWorksSite
         protected void BuildResume(object sender, EventArgs e)
         {
             ResumeBuilder resume = new ResumeBuilder();
-            resume.FNameRes = fName.Text;
-            resume.LNameRes = lName.Text;
+
+            resume.NameRes = string.Concat(fName.Text, " ", lName.Text);
             resume.AddressRes1 = stAddress.Text;
             resume.AddressRes2 =  string.Concat(CityRes.Text, ", ", StateRes.SelectedValue, ", ", zipRes.Text);
-            resume.PhoneNumRes = string.Concat("(", phoneRes1.Text, ")-", phoneRes2.Text, "-", phoneRes3.Text);
-            System.Diagnostics.Debug.WriteLine(resume.FNameRes + " " + resume.LNameRes);
+            resume.PhoneNumRes = phoneRes.Text.ToString();
+
+            if (!JobTitle1.Text.Equals(""))
+            {
+                Job job1 = new Job();
+                job1.JobTitle = JobTitle1.Text;
+                job1.JobDuties = JobDuties1.Text;
+                job1.CompanyName = CompName1.Text;
+                job1.JobCityState = string.Concat(JobCity1.Text, ", ", JobState1.SelectedValue);
+                job1.JobYears = string.Concat(YearFrom1.Text, " - ", YearTo1.Text);
+
+                resume.jobList.Add(job1);
+            }
+
+             if (!JobTitle2.Text.Equals(""))
+            {
+                Job job2 = new Job();
+                job2.JobTitle = JobTitle2.Text;
+                job2.JobDuties = JobDuties2.Text;
+                job2.CompanyName = CompName2.Text;
+                job2.JobCityState = string.Concat(JobCity2.Text, ", ", JobState2.SelectedValue);
+                job2.JobYears = string.Concat(YearFrom2.Text, " - ", YearTo2.Text);
+
+                resume.jobList.Add(job2);
+            }
+
+
+             if (!JobTitle3.Text.Equals(""))
+            {
+                Job job3 = new Job();
+                job3.JobTitle = JobTitle3.Text;
+                job3.JobDuties = JobDuties3.Text;
+                job3.CompanyName = CompName3.Text;
+                job3.JobCityState = string.Concat(JobCity3.Text, ", ", JobState3.SelectedValue);
+                job3.JobYears = string.Concat(YearFrom3.Text, " - ", YearFrom3.Text);
+
+                resume.jobList.Add(job3);
+            }
+
+
+            System.Diagnostics.Debug.WriteLine(resume.NameRes);
             System.Diagnostics.Debug.WriteLine(resume.AddressRes1);
             System.Diagnostics.Debug.WriteLine(resume.AddressRes2);
             System.Diagnostics.Debug.WriteLine(resume.PhoneNumRes);
+
+
         }
     }
 }

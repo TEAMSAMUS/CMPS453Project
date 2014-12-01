@@ -89,11 +89,11 @@
                     <asp:ListItem Value="fullTime">Full-Time (40 or More)</asp:ListItem>
                 </asp:RadioButtonList>
                 <br />
-                Expreience Level: 
+                Experience Level: 
                 <asp:RadioButtonList ID="experienceLevel" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Selected="True">Entry</asp:ListItem>
                     <asp:ListItem>Intermediate</asp:ListItem>
-                    <asp:ListItem">Expert</asp:ListItem>
+                    <asp:ListItem>Expert</asp:ListItem>
                 </asp:RadioButtonList>
             </p>
         </div>
