@@ -67,7 +67,7 @@
             <br />
             Preferred Salary Range: 
             <asp:DropDownList ID="salaryRange" runat="server">
-                <asp:ListItem Value="$L10000">< $10,000</asp:ListItem>
+                <asp:ListItem Value="<$10000">< $10,000</asp:ListItem>
 
             </asp:DropDownList>
             <br />

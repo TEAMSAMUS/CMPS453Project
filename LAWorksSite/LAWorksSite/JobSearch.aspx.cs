@@ -71,8 +71,20 @@ namespace LAWorksSite
         protected void Search_Click(object sender, EventArgs e)
         {
             SearchResults result = new SearchResults();
+            result.KeywordRes = keyword.Text;
+            result.LocationRes = jobLoc.SelectedValue;
+            result.SalaryRes = salaryRange.SelectedValue;
             result.EducationRes = education.SelectedValue;
+            result.HoursRes = hoursButtons.SelectedValue;
+            result.ExpRes = experienceLevel.SelectedValue;
+
+
+            System.Diagnostics.Debug.WriteLine(result.KeywordRes);
+            System.Diagnostics.Debug.WriteLine(result.LocationRes);
+            System.Diagnostics.Debug.WriteLine(result.SalaryRes);
             System.Diagnostics.Debug.WriteLine(result.EducationRes);
+            System.Diagnostics.Debug.WriteLine(result.HoursRes);
+            System.Diagnostics.Debug.WriteLine(result.ExpRes);
 
             
             
