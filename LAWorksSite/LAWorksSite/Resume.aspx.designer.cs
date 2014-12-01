@@ -103,15 +103,6 @@ namespace LAWorksSite {
         protected global::System.Web.UI.WebControls.DropDownList education;
         
         /// <summary>
-        /// hoursButtons control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList hoursButtons;
-        
-        /// <summary>
         /// experienceLevel control.
         /// </summary>
         /// <remarks>

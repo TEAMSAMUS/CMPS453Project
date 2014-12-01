@@ -2,14 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div align="center">
-    <div style="border:solid 4px; border-color:green; overflow:hidden; display:inline-table; padding-left:25px; padding-right:100px; text-align:left;">
-        <p>
-            <br />
-            Enter Job Keyword(s): 
+        <div style="border: solid 4px; border-color: green; overflow: hidden; display: inline-table; padding-left: 25px; padding-right: 100px; text-align: left;">
+            <p>
+                <br />
+                Enter Job Keyword(s): 
             <asp:TextBox ID="keyword" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            Select A Job Location: 
+                <br />
+                <br />
+                Select A Job Location: 
                 <asp:DropDownList ID="jobLoc" runat="server">
                     <asp:ListItem Value="AL">Alabama</asp:ListItem>
                     <asp:ListItem Value="AK">Alaska</asp:ListItem>
@@ -63,40 +63,40 @@
                     <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
                     <asp:ListItem Value="WY">Wyoming</asp:ListItem>
                 </asp:DropDownList>
-            <br />
-            <br />
-            Preferred Salary Range: 
+                <br />
+                <br />
+                Preferred Salary Range: 
             <asp:DropDownList ID="salaryRange" runat="server">
                 <asp:ListItem Value="<$10000">< $10,000</asp:ListItem>
 
             </asp:DropDownList>
-            <br />
-            <br />
-            Education Level: 
+                <br />
+                <br />
+                Education Level: 
             <asp:DropDownList ID="education" runat="server">
-                <asp:ListItem Value="SomeHS">Some High School</asp:ListItem>
-                <asp:ListItem Value="GradHS">High School Degree</asp:ListItem>
-                <asp:ListItem Value="SomeColl">Some College</asp:ListItem>
-                <asp:ListItem Value="CollAsso">Associate's Degree</asp:ListItem>
-                <asp:ListItem Value="CollBach">Bachelor's Degree</asp:ListItem>
-                <asp:ListItem Value="CollMast">Master's Degree/ PhD</asp:ListItem>
+                <asp:ListItem>Some High School</asp:ListItem>
+                <asp:ListItem>High School Degree</asp:ListItem>
+                <asp:ListItem>Some College</asp:ListItem>
+                <asp:ListItem>Associate's Degree</asp:ListItem>
+                <asp:ListItem>Bachelor's Degree</asp:ListItem>
+                <asp:ListItem>Master's Degree/ PhD</asp:ListItem>
             </asp:DropDownList>
-            <br />
-            <br />
-            Desired Hours: 
+                <br />
+                <br />
+                Desired Hours: 
                 <asp:RadioButtonList ID="hoursButtons" runat="server" RepeatDirection="Vertical" CellPadding="0">
                     <asp:ListItem Selected="True" Value="partTime">Part-Time (Less than 40)</asp:ListItem>
                     <asp:ListItem Value="fullTime">Full-Time (40 or More)</asp:ListItem>
                 </asp:RadioButtonList>
-            <br />
-            Expreience Level: 
+                <br />
+                Expreience Level: 
                 <asp:RadioButtonList ID="experienceLevel" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Selected="True" Value="entry">Entry</asp:ListItem>
-                    <asp:ListItem Value="intermediate">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="expert">Expert</asp:ListItem>
+                    <asp:ListItem Selected="True">Entry</asp:ListItem>
+                    <asp:ListItem>Intermediate</asp:ListItem>
+                    <asp:ListItem">Expert</asp:ListItem>
                 </asp:RadioButtonList>
-        </p>
-    </div>
+            </p>
+        </div>
         <p>
             <br />
             <br />
@@ -104,5 +104,5 @@
             <br />
             <br />
         </p>
-        </div>
+    </div>
 </asp:Content>

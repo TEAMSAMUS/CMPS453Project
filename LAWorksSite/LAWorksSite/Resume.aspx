@@ -75,26 +75,21 @@
                 <br />
                 Phone Number:
                 (<asp:TextBox ID="phoneRes1" runat="server" Width="30px" MaxLength="3"></asp:TextBox>) - 
-                <asp:TextBox ID="phoneRes2" runat="server" Width="30px" MaxLength="3"></asp:TextBox> - 
+                <asp:TextBox ID="phoneRes2" runat="server" Width="30px" MaxLength="3"></asp:TextBox>
+                - 
                 <asp:TextBox ID="phoneRes3" runat="server" Width="40px" MaxLength="4"></asp:TextBox>
                 <br />
                 <br />
                 Education Level: 
             <asp:DropDownList ID="education" runat="server">
-                <asp:ListItem Value="SomeHS">Some High School</asp:ListItem>
-                <asp:ListItem Value="GradHS">High School Degree</asp:ListItem>
+                <asp:ListItem Value="Some High School">Some High School</asp:ListItem>
+                <asp:ListItem Value="High School Degree">High School Degree</asp:ListItem>
                 <asp:ListItem Value="SomeColl">Some College</asp:ListItem>
                 <asp:ListItem Value="CollAsso">Associate's Degree</asp:ListItem>
                 <asp:ListItem Value="CollBach">Bachelor's Degree</asp:ListItem>
                 <asp:ListItem Value="CollMast">Master's Degree/ PhD</asp:ListItem>
             </asp:DropDownList>
                 <br />
-                <br />
-                Desired Hours: 
-                <asp:RadioButtonList ID="hoursButtons" runat="server" RepeatDirection="Vertical" CellPadding="0">
-                    <asp:ListItem Selected="True" Value="partTime">Part-Time (Less than 40)</asp:ListItem>
-                    <asp:ListItem Value="fullTime">Full-Time (40 or More)</asp:ListItem>
-                </asp:RadioButtonList>
                 <br />
                 Expreience Level: 
                 <asp:RadioButtonList ID="experienceLevel" runat="server" RepeatDirection="Horizontal">

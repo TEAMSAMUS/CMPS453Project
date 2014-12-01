@@ -28,11 +28,25 @@ public class ResumeBuilder
         set { lNameRes = value; }
     }
 
-    private String addressRes;
-    public string AddressRes
+    private String addressRes1;
+    public string AddressRes1
     {
-        get { return addressRes; }
-        set { addressRes = value; }
+        get { return addressRes1; }
+        set { addressRes1 = value; }
+    }
+
+    private String addressRes2;
+    public string AddressRes2
+    {
+        get { return addressRes2; }
+        set { addressRes2 = value; }
+    }
+
+    private String phoneNumRes;
+    public string PhoneNumRes
+    {
+        get { return phoneNumRes; }
+        set { phoneNumRes = value; }
     }
 
     private String educationRes;
@@ -71,8 +85,15 @@ namespace LAWorksSite
         protected void BuildResume(object sender, EventArgs e)
         {
             ResumeBuilder resume = new ResumeBuilder();
-            resume.AddressRes =  string.Concat(stAddress.Text, " ", CityRes.Text, ", ", StateRes.SelectedValue, " ", zipRes.Text);
-            System.Diagnostics.Debug.WriteLine(resume.AddressRes);
+            resume.FNameRes = fName.Text;
+            resume.LNameRes = lName.Text;
+            resume.AddressRes1 = stAddress.Text;
+            resume.AddressRes2 =  string.Concat(CityRes.Text, ", ", StateRes.SelectedValue, ", ", zipRes.Text);
+            resume.PhoneNumRes = string.Concat("(", phoneRes1.Text, ")-", phoneRes2.Text, "-", phoneRes3.Text);
+            System.Diagnostics.Debug.WriteLine(resume.FNameRes + " " + resume.LNameRes);
+            System.Diagnostics.Debug.WriteLine(resume.AddressRes1);
+            System.Diagnostics.Debug.WriteLine(resume.AddressRes2);
+            System.Diagnostics.Debug.WriteLine(resume.PhoneNumRes);
         }
     }
 }
