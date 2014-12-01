@@ -7,54 +7,75 @@ using System.Web.UI.WebControls;
 
 public class SearchResults
 {
-    TextBox keyword;
-    public string Keyword
+
+    public SearchResults()
     {
-        get { return keyword.Text; }
-        set { keyword.Text = value; }
+    
     }
 
-    TextBox location;
-    public string Location
+    private String keywordRes;
+    public string KeywordRes
     {
-        get { return location.Text; }
-        set { location.Text = value; }
+        get { return keywordRes; }
+        set { this.keywordRes = value; }
     }
 
-    TextBox salary;
-    public string Salary
+    private String locationRes;
+    public string LocationRes
     {
-        get { return salary.Text; }
-        set { salary.Text = value; }
+        get { return locationRes; }
+        set { locationRes = value; }
     }
 
-    TextBox education;
-    public string Education
+    private String salaryRes;
+    public string SalaryRes
     {
-        get { return education.Text; }
-        set { education.Text = value; }
+        get { return salaryRes; }
+        set { salaryRes = value; }
+    }
+
+    private String educationRes;
+    public string EducationRes
+    {
+        get { return educationRes; }
+        set { educationRes = value; }
+    }
+
+    private String hoursRes;
+    public string HoursRes
+    {
+        get { return hoursRes; }
+        set { hoursRes = value; }
+    }
+
+    private String expRes;
+    public string ExpRes
+    {
+        get { return expRes; }
+        set { expRes = value; }
     }
 }
 
 namespace LAWorksSite
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class JobSearch : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void SearchBox_TextChanged(object sender, EventArgs e)
-        {
-
+           if(!IsPostBack)
+           {
+               keyword.Text = "";
+           }
         }
 
         protected void Search_Click(object sender, EventArgs e)
         {
-            
+            SearchResults result = new SearchResults();
+            result.EducationRes = education.SelectedValue;
+            System.Diagnostics.Debug.WriteLine(result.EducationRes);
 
-            // Response.Redirect("Resume.aspx");
+            
+            
         }
 
     }

@@ -10,7 +10,7 @@
 namespace LAWorksSite {
     
     
-    public partial class WebForm2 {
+    public partial class JobSearch {
         
         /// <summary>
         /// keyword control.
@@ -22,22 +22,22 @@ namespace LAWorksSite {
         protected global::System.Web.UI.WebControls.TextBox keyword;
         
         /// <summary>
-        /// location control.
+        /// jobLoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox location;
+        protected global::System.Web.UI.WebControls.DropDownList jobLoc;
         
         /// <summary>
-        /// salary control.
+        /// salaryRange control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox salary;
+        protected global::System.Web.UI.WebControls.DropDownList salaryRange;
         
         /// <summary>
         /// education control.
@@ -46,7 +46,25 @@ namespace LAWorksSite {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox education;
+        protected global::System.Web.UI.WebControls.DropDownList education;
+        
+        /// <summary>
+        /// hoursButtons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList hoursButtons;
+        
+        /// <summary>
+        /// experienceLevel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList experienceLevel;
         
         /// <summary>
         /// CommitSearch control.
@@ -56,14 +74,5 @@ namespace LAWorksSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CommitSearch;
-        
-        /// <summary>
-        /// SearchResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table SearchResults;
     }
 }
