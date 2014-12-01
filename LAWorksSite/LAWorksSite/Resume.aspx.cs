@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * This program will be using GemBox.Document Free for creating Word Documents
+ *      in the code.
+ *      GemBox.Document Free can be found at http://www.gemboxsoftware.com/document/free-version
+ * 
+ */
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +12,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Diagnostics;
+using GemBox.Document;
 
 
 public class ResumeBuilder
@@ -117,14 +125,14 @@ namespace LAWorksSite
         {
 
         }
-
+        
         protected void BuildResume(object sender, EventArgs e)
         {
             ResumeBuilder resume = new ResumeBuilder();
 
             resume.NameRes = string.Concat(fName.Text, " ", lName.Text);
             resume.AddressRes1 = stAddress.Text;
-            resume.AddressRes2 =  string.Concat(CityRes.Text, ", ", StateRes.SelectedValue, ", ", zipRes.Text);
+            resume.AddressRes2 =  string.Concat(CityRes.Text, ", ", StateRes.Value, ", ", zipRes.Text);
             resume.PhoneNumRes = phoneRes.Text.ToString();
 
             if (!JobTitle1.Text.Equals(""))
@@ -133,7 +141,7 @@ namespace LAWorksSite
                 job1.JobTitle = JobTitle1.Text;
                 job1.JobDuties = JobDuties1.Text;
                 job1.CompanyName = CompName1.Text;
-                job1.JobCityState = string.Concat(JobCity1.Text, ", ", JobState1.SelectedValue);
+                job1.JobCityState = string.Concat(JobCity1.Text, ", ", JobState1.Value);
                 job1.JobYears = string.Concat(YearFrom1.Text, " - ", YearTo1.Text);
 
                 resume.jobList.Add(job1);
@@ -145,7 +153,7 @@ namespace LAWorksSite
                 job2.JobTitle = JobTitle2.Text;
                 job2.JobDuties = JobDuties2.Text;
                 job2.CompanyName = CompName2.Text;
-                job2.JobCityState = string.Concat(JobCity2.Text, ", ", JobState2.SelectedValue);
+                job2.JobCityState = string.Concat(JobCity2.Text, ", ", JobState2.Value);
                 job2.JobYears = string.Concat(YearFrom2.Text, " - ", YearTo2.Text);
 
                 resume.jobList.Add(job2);
@@ -158,17 +166,24 @@ namespace LAWorksSite
                 job3.JobTitle = JobTitle3.Text;
                 job3.JobDuties = JobDuties3.Text;
                 job3.CompanyName = CompName3.Text;
-                job3.JobCityState = string.Concat(JobCity3.Text, ", ", JobState3.SelectedValue);
+                job3.JobCityState = string.Concat(JobCity3.Text, ", ", JobState3.Value);
                 job3.JobYears = string.Concat(YearFrom3.Text, " - ", YearFrom3.Text);
 
                 resume.jobList.Add(job3);
             }
 
 
-            System.Diagnostics.Debug.WriteLine(resume.NameRes);
-            System.Diagnostics.Debug.WriteLine(resume.AddressRes1);
-            System.Diagnostics.Debug.WriteLine(resume.AddressRes2);
-            System.Diagnostics.Debug.WriteLine(resume.PhoneNumRes);
+            Debug.WriteLine(resume.NameRes);
+            Debug.WriteLine(resume.AddressRes1);
+            Debug.WriteLine(resume.AddressRes2);
+            Debug.WriteLine(resume.PhoneNumRes);
+
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+            var document = new DocumentModel();
+
+            
+
+            
 
 
         }

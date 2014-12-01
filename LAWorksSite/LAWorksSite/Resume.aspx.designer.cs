@@ -55,7 +55,7 @@ namespace LAWorksSite {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StateRes;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect StateRes;
         
         /// <summary>
         /// zipRes control.
@@ -136,7 +136,7 @@ namespace LAWorksSite {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList JobState1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect JobState1;
         
         /// <summary>
         /// YearFrom1 control.
@@ -199,7 +199,7 @@ namespace LAWorksSite {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList JobState2;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect JobState2;
         
         /// <summary>
         /// YearFrom2 control.
@@ -262,7 +262,7 @@ namespace LAWorksSite {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList JobState3;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect JobState3;
         
         /// <summary>
         /// YearFrom3 control.

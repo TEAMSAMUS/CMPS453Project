@@ -65,6 +65,7 @@ namespace LAWorksSite
            if(!IsPostBack)
            {
                keyword.Text = "";
+               
            }
         }
 
@@ -72,7 +73,7 @@ namespace LAWorksSite
         {
             SearchResults result = new SearchResults();
             result.KeywordRes = keyword.Text;
-            result.LocationRes = jobLoc.SelectedValue;
+            result.LocationRes = jobLoc.Value;
             result.SalaryRes = salaryRange.SelectedValue;
             result.EducationRes = education.SelectedValue;
             result.HoursRes = hoursButtons.SelectedValue;

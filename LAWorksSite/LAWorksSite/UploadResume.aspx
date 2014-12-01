@@ -2,7 +2,7 @@
 
 <asp:Content ID="UploadContent" ContentPlaceHolderID="MainContent" runat="server">
     <div align="center">
-        <b>Select a File to Upload (Word or PDF only)</b>
+        <b>Select a Resumé to Upload (Word or PDF only)</b>
         <br />
         <br />
         <asp:FileUpload ID="FileUploadControl" runat="server" />
