@@ -385,7 +385,7 @@
                 <asp:ListItem>3 Years of College or a Technical or Vocational School</asp:ListItem>
                 <asp:ListItem>Vocational School Certificate</asp:ListItem>
                 <asp:ListItem>Associate&#39;s Degree</asp:ListItem>
-                <asp:ListItem>Value="BD">Bachelor&#39;s Degree</asp:ListItem>
+                <asp:ListItem>Bachelor&#39;s Degree</asp:ListItem>
                 <asp:ListItem>Master&#39;s Degree</asp:ListItem>
                 <asp:ListItem>Doctorate Degree</asp:ListItem>
                 <asp:ListItem>Specialized Degree (e.g. MD, DDS)</asp:ListItem>

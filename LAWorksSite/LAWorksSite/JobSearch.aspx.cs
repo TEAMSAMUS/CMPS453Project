@@ -80,7 +80,7 @@ namespace LAWorksSite
         {
             Search result = new Search();
             result.KeywordRes = keyword.Text;
-            result.LocationRes = jobLoc.Value;
+            result.LocationRes = jobLoc.Text;
             result.SalaryLowRes = SalaryLow.Value;
             result.SalaryHighRes = SalaryHigh.Value;
             result.EducationRes = education.SelectedValue;
