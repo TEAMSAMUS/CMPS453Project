@@ -19,6 +19,7 @@ using GemBox.Document;
 public class ResumeBuilder
 {
     public List<Job> jobList = new List<Job>();
+    public List<JobReference> refList = new List<JobReference>();
 
     public ResumeBuilder()
     {
@@ -129,6 +130,51 @@ public class Job
 
 }
 
+public class JobReference
+{
+
+    public JobReference()
+    {
+
+    }
+
+    private String refName;
+    public string RefName
+    {
+        get { return refName; }
+        set { refName = value; }
+    }
+
+    private String refAddress1;
+    public string RefAddress1
+    {
+        get { return refAddress1; }
+        set { refAddress1 = value; }
+    }
+
+    private String refAddress2;
+    public string RefAddress2
+    {
+        get { return refAddress2; }
+        set { refAddress2 = value; }
+    }
+
+    private String refPhoneNum;
+    public string RefPhoneNum
+    {
+        get { return refPhoneNum; }
+        set { refPhoneNum = value; }
+    }
+
+    private String refInfo;
+    public string RefInfo
+    {
+        get { return refInfo; }
+        set { refInfo = value; }
+    }
+
+}
+
 namespace LAWorksSite
 {
 
@@ -189,12 +235,44 @@ namespace LAWorksSite
                 resume.jobList.Add(job3);
             }
 
+            if (!refName1.Text.Equals(""))
+            {
+                JobReference reference = new JobReference();
+                reference.RefName = refName1.Text;
+                reference.RefAddress1 = refAdd1.Text;
+                reference.RefAddress2 = string.Concat(refCity1.Text, ", ", refState1.Value, " ", refZip1.Text);
+                reference.RefPhoneNum = refPhone1.Text.ToString();
+                reference.RefInfo = refInfo1.Text;
 
-            Debug.WriteLine(resume.NameRes);
-            Debug.WriteLine(resume.AddressRes1);
-            Debug.WriteLine(resume.AddressRes2);
-            Debug.WriteLine(resume.PhoneNumRes);
-            Debug.WriteLine(resume.jobList[0].JobTitle);
+                resume.refList.Add(reference);
+            }
+
+            if (!refName2.Text.Equals(""))
+            {
+                JobReference reference = new JobReference();
+                reference.RefName = refName2.Text;
+                reference.RefAddress1 = refAdd2.Text;
+                reference.RefAddress2 = string.Concat(refCity2.Text, ", ", refState2.Value, " ", refZip2.Text);
+                reference.RefPhoneNum = refPhone2.Text.ToString();
+                reference.RefInfo = refInfo2.Text;
+
+                resume.refList.Add(reference);
+            }
+
+
+            if (!refName3.Text.Equals(""))
+            {
+                JobReference reference = new JobReference();
+                reference.RefName = refName3.Text;
+                reference.RefAddress1 = refAdd3.Text;
+                reference.RefAddress2 = string.Concat(refCity3.Text, ", ", refState3.Value, " ", refZip3.Text);
+                reference.RefPhoneNum = refPhone3.Text.ToString();
+                reference.RefInfo = refInfo3.Text;
+
+                resume.refList.Add(reference);
+            }
+
+
 
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             var document = new DocumentModel();
