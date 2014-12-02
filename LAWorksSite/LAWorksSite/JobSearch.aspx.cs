@@ -87,7 +87,7 @@ namespace LAWorksSite
             System.Diagnostics.Debug.WriteLine(result.HoursRes);
             System.Diagnostics.Debug.WriteLine(result.ExpRes);
 
-            
+            Response.Redirect("SearchResults.aspx");
             
         }
 
