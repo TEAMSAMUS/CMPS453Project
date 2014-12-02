@@ -32,6 +32,12 @@
                 <img src="Images/LWC_Logo_Color large.jpg"
                     alt="Louisiana Workforce Career Seeker Home"
                     width="150" height="75" border="0" /></a>
+        <!--
+            <a href="default.aspx">
+                <img src="Images/uol.gif"
+                alt="University of Louisiana"
+                width="150" height="75" border="0" /></a>
+            -->
         </div>
         <!
         <asp:PlaceHolder runat="server">

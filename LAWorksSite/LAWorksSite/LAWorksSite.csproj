@@ -150,6 +150,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\uol.gif" />
     <Content Include="SearchResults.aspx" />
     <Content Include="UploadResume.aspx" />
     <Content Include="About.aspx" />

@@ -106,7 +106,7 @@ namespace LAWorksSite
             res.Employer = "resultEmployer";
             res.Location = "resultLocation";
             res.Salary = "resultSalary";
-            res.JobSpecs = "jobSpevefocihweluifhlweuhfluiwehfluihweluifliuewhfluwaeflhawleuhfliuwehsfuhics";
+            res.JobSpecs = "jobSpecs";
             resultList.Add(res);
 
             res = new Result();
