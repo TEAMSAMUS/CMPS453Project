@@ -378,17 +378,17 @@
             <div>
                 Education Level: 
             <asp:DropDownList ID="education" runat="server">
-                <asp:ListItem Value="88">High School Equivalency Diploma</asp:ListItem>
-                <asp:ListItem Value="87">High School Diploma</asp:ListItem>
-                <asp:ListItem Value="13">1 Year of College or a Technical or Vocational School</asp:ListItem>
-                <asp:ListItem Value="14">2 Years of College or a Technical or Vocational School</asp:ListItem>
-                <asp:ListItem Value="15">3 Years of College or a Technical or Vocational School</asp:ListItem>
-                <asp:ListItem Value="VC">Vocational School Certificate</asp:ListItem>
-                <asp:ListItem Value="AD">Associate&#39;s Degree</asp:ListItem>
-                <asp:ListItem Value="BD">Bachelor&#39;s Degree</asp:ListItem>
-                <asp:ListItem Value="MD">Master&#39;s Degree</asp:ListItem>
-                <asp:ListItem Value="PD">Doctorate Degree</asp:ListItem>
-                <asp:ListItem Value="SD">Specialized Degree (e.g. MD, DDS)</asp:ListItem>
+                <asp:ListItem>High School Equivalency Diploma</asp:ListItem>
+                <asp:ListItem>High School Diploma</asp:ListItem>
+                <asp:ListItem>1 Year of College or a Technical or Vocational School</asp:ListItem>
+                <asp:ListItem>2 Years of College or a Technical or Vocational School</asp:ListItem>
+                <asp:ListItem>3 Years of College or a Technical or Vocational School</asp:ListItem>
+                <asp:ListItem>Vocational School Certificate</asp:ListItem>
+                <asp:ListItem>Associate&#39;s Degree</asp:ListItem>
+                <asp:ListItem>Value="BD">Bachelor&#39;s Degree</asp:ListItem>
+                <asp:ListItem>Master&#39;s Degree</asp:ListItem>
+                <asp:ListItem>Doctorate Degree</asp:ListItem>
+                <asp:ListItem>Specialized Degree (e.g. MD, DDS)</asp:ListItem>
             </asp:DropDownList>
                 Issuing Institution:
             <asp:TextBox ID="schoolRes" runat="server" Width="150"></asp:TextBox>
@@ -699,6 +699,7 @@
             <br />
         </div>
         <p>
+            <br />
             <asp:Button ID="SubmitResume" runat="server" Text="Build" OnClick="BuildResume" />
             <br />
             <br />

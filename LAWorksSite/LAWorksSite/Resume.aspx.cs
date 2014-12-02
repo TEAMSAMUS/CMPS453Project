@@ -10,10 +10,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.IO;
 using System.Diagnostics;
 using GemBox.Document;
+using GemBox.Document.Tables;
 
 
 public class ResumeBuilder
@@ -82,6 +82,41 @@ public class ResumeBuilder
         set { emailRes = value; }
     }
 
+    private String issuingSchool;
+    public string IssuingSchool
+    {
+        get { return issuingSchool; }
+        set { issuingSchool = value; }
+    }
+
+    private String courseStudy;
+    public string CourseStudy
+    {
+        get { return courseStudy; }
+        set { courseStudy = value; }
+    }
+
+    private String academicHonors;
+    public string AcademicHonors
+    {
+        get { return academicHonors; }
+        set { academicHonors = value; }
+    }
+
+    private String honorsActivities;
+    public string HonorsActivities
+    {
+        get { return honorsActivities; }
+        set { honorsActivities = value; }
+    }
+
+    private String addInfo;
+    public string AddInfo
+    {
+        get { return addInfo; }
+        set { addInfo = value; }
+    }
+
 
 }
 
@@ -145,18 +180,11 @@ public class JobReference
         set { refName = value; }
     }
 
-    private String refAddress1;
-    public string RefAddress1
+    private String refAddress;
+    public string RefAddress
     {
-        get { return refAddress1; }
-        set { refAddress1 = value; }
-    }
-
-    private String refAddress2;
-    public string RefAddress2
-    {
-        get { return refAddress2; }
-        set { refAddress2 = value; }
+        get { return refAddress; }
+        set { refAddress = value; }
     }
 
     private String refPhoneNum;
@@ -197,6 +225,13 @@ namespace LAWorksSite
             resume.EmailRes = emailAddress.Text;
             resume.ObjectiveRes = objectiveRes.Text;
             resume.AbilitySumRes = abilitySum.Text;
+            resume.EducationRes = education.SelectedValue;
+            resume.IssuingSchool = schoolRes.Text;
+            resume.CourseStudy = schoolCourse.Text;
+            resume.AcademicHonors = academicHonors.Text;
+            resume.HonorsActivities = honorsActivities.Text;
+            resume.AddInfo = addInfo.Text;
+
 
             if (!JobTitle1.Text.Equals(""))
             {
@@ -235,12 +270,12 @@ namespace LAWorksSite
                 resume.jobList.Add(job3);
             }
 
+
             if (!refName1.Text.Equals(""))
             {
                 JobReference reference = new JobReference();
                 reference.RefName = refName1.Text;
-                reference.RefAddress1 = refAdd1.Text;
-                reference.RefAddress2 = string.Concat(refCity1.Text, ", ", refState1.Value, " ", refZip1.Text);
+                reference.RefAddress = string.Concat(refAdd1.Text, " ", refCity1.Text, ", ", refState1.Value, " ", refZip1.Text);
                 reference.RefPhoneNum = refPhone1.Text.ToString();
                 reference.RefInfo = refInfo1.Text;
 
@@ -251,8 +286,7 @@ namespace LAWorksSite
             {
                 JobReference reference = new JobReference();
                 reference.RefName = refName2.Text;
-                reference.RefAddress1 = refAdd2.Text;
-                reference.RefAddress2 = string.Concat(refCity2.Text, ", ", refState2.Value, " ", refZip2.Text);
+                reference.RefAddress = string.Concat(refAdd2.Text, " ", refCity2.Text, ", ", refState2.Value, " ", refZip2.Text);
                 reference.RefPhoneNum = refPhone2.Text.ToString();
                 reference.RefInfo = refInfo2.Text;
 
@@ -264,8 +298,7 @@ namespace LAWorksSite
             {
                 JobReference reference = new JobReference();
                 reference.RefName = refName3.Text;
-                reference.RefAddress1 = refAdd3.Text;
-                reference.RefAddress2 = string.Concat(refCity3.Text, ", ", refState3.Value, " ", refZip3.Text);
+                reference.RefAddress = string.Concat(refAdd3.Text, " ", refCity3.Text, ", ", refState3.Value, " ", refZip3.Text);
                 reference.RefPhoneNum = refPhone3.Text.ToString();
                 reference.RefInfo = refInfo3.Text;
 
@@ -416,9 +449,128 @@ namespace LAWorksSite
                                 SpaceAfter = 20
                             }
                         });
-            
             }
 
+            //Eduction History
+            document.Sections[0].Blocks.Add(
+
+                    new Paragraph(document,
+                        new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                        new Run(document, "Education History")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 13.5,
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, "Issuing Institution")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new Run(document, "Education Level")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new Run(document, "Course of Study")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Bold = true
+                    }
+                },
+
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+
+                new Run(document, resume.IssuingSchool),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new Run(document, resume.EducationRes),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new SpecialCharacter(document, SpecialCharacterType.Tab),
+                new Run(document, resume.CourseStudy),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.AcademicHonors),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak)));
+
+            //Honors and Activities
+            document.Sections[0].Blocks.Add(
+
+                    new Paragraph(document,
+                        new Run(document, "Honors & Activities")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 13.5,
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+
+                new Run(document, resume.HonorsActivities),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak)));
+
+            //Additional Information
+            document.Sections[0].Blocks.Add(
+
+                    new Paragraph(document,
+                        new Run(document, "Additional Information")
+                        {
+                            CharacterFormat = new CharacterFormat()
+                            {
+                                Size = 13.5,
+                                Bold = true
+                            }
+                        },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+
+                new Run(document, resume.AddInfo),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                
+                //References
+                new Run(document, "Detailed References")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 13.5,
+                        Bold = true
+                    }
+                }));
+
+            foreach (JobReference Ref in resume.refList)
+            {
+                //Job Reference Details
+                document.Sections[0].Blocks.Add(
+                    new Paragraph(document,
+                    new Run(document, Ref.RefName),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new Run(document, Ref.RefAddress),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new Run(document, Ref.RefPhoneNum),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                    new Run(document, Ref.RefInfo),
+                    new SpecialCharacter(document, SpecialCharacterType.LineBreak)));
+            }
 
             document.Save(resume.NameRes + "Resume.docx");
 
