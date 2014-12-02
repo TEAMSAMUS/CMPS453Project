@@ -125,15 +125,16 @@ namespace LAWorksSite
         {
 
         }
-        
+
         protected void BuildResume(object sender, EventArgs e)
         {
             ResumeBuilder resume = new ResumeBuilder();
 
             resume.NameRes = string.Concat(fName.Text, " ", lName.Text);
             resume.AddressRes1 = stAddress.Text;
-            resume.AddressRes2 =  string.Concat(CityRes.Text, ", ", StateRes.Value, ", ", zipRes.Text);
+            resume.AddressRes2 = string.Concat(CityRes.Text, ", ", StateRes.Value, zipRes.Text);
             resume.PhoneNumRes = phoneRes.Text.ToString();
+            resume.EmailRes = emailAddress.Text;
 
             if (!JobTitle1.Text.Equals(""))
             {
@@ -147,7 +148,7 @@ namespace LAWorksSite
                 resume.jobList.Add(job1);
             }
 
-             if (!JobTitle2.Text.Equals(""))
+            if (!JobTitle2.Text.Equals(""))
             {
                 Job job2 = new Job();
                 job2.JobTitle = JobTitle2.Text;
@@ -160,7 +161,7 @@ namespace LAWorksSite
             }
 
 
-             if (!JobTitle3.Text.Equals(""))
+            if (!JobTitle3.Text.Equals(""))
             {
                 Job job3 = new Job();
                 job3.JobTitle = JobTitle3.Text;
@@ -181,17 +182,66 @@ namespace LAWorksSite
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             var document = new DocumentModel();
 
-            
+            Section section = new Section(document,
+            new Paragraph(document,
+                new Run(document, resume.NameRes)
+                {
+                    CharacterFormat = new CharacterFormat()
+                        {
+                            Size = 13,
+                            Bold = true
+                        }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.AddressRes1),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.AddressRes2),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, "Phone: " + resume.PhoneNumRes),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.EmailRes))
+                {
+                    ParagraphFormat = new ParagraphFormat
+                        {
+                            Alignment = HorizontalAlignment.Center,
+                            LineSpacing = 10,
+                            LineSpacingRule = LineSpacingRule.AtLeast,
+                            SpaceAfter = 20
+                        }
+                });
+            document.Sections.Add(section);
 
-            // Go through each KnownFolder enum entry
 
+            section = new Section(document,
+            new Paragraph(document,
+                new Run(document, "Objective")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 14,
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.AddressRes1),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.AddressRes2),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, "Phone: " + resume.PhoneNumRes),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.EmailRes))
+            {
+                ParagraphFormat = new ParagraphFormat
+                {
+                    Alignment = HorizontalAlignment.Left,
+                    LineSpacing = 10,
+                    LineSpacingRule = LineSpacingRule.AtLeast,
+                    SpaceAfter = 20
+                }
+            });
+            document.Sections.Add(section);
 
-            document.Save("document.docx");
-
-            
-
-            
-
+            document.Save(resume.NameRes + "Resume.docx");
 
         }
     }
