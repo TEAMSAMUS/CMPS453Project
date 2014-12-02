@@ -82,7 +82,7 @@
 
                 </select>
                 Zip Code:
-                <asp:TextBox ID="zipRes" runat="server"></asp:TextBox>
+                <asp:TextBox ID="zipRes" runat="server" MaxLength="5" Width="50" TextMode="SingleLine"></asp:TextBox>
                 <br />
                 <br />
                 Phone Number:
@@ -94,6 +94,17 @@
                 <asp:TextBox ID="emailAddress" runat="server" TextMode="Email"></asp:TextBox>
                 <br />
                 <br />
+            </p>
+            <div>
+                <div>
+                    Objective: 
+                <asp:TextBox ID="objectiveRes" runat="server" TextMode="MultiLine" Width="400"></asp:TextBox>
+                    Ability Summary: 
+                <asp:TextBox ID="abilitySum" runat="server" TextMode="MultiLine" Width="400"></asp:TextBox>
+                </div>
+            </div>
+            <p>
+                <br /><br />
                 Education Level: 
             <asp:DropDownList ID="education" runat="server">
                 <asp:ListItem Value="88">High School Equivalency Diploma</asp:ListItem>

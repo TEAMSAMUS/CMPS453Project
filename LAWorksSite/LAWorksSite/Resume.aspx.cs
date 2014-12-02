@@ -53,6 +53,20 @@ public class ResumeBuilder
         set { phoneNumRes = value; }
     }
 
+    private String objectiveRes;
+    public string ObjectiveRes
+    {
+        get { return objectiveRes; }
+        set { objectiveRes = value; }
+    }
+
+    private String abilitySumRes;
+    public string AbilitySumRes
+    {
+        get { return abilitySumRes; }
+        set { abilitySumRes = value; }
+    }
+
     private String educationRes;
     public string EducationRes
     {
@@ -132,9 +146,11 @@ namespace LAWorksSite
 
             resume.NameRes = string.Concat(fName.Text, " ", lName.Text);
             resume.AddressRes1 = stAddress.Text;
-            resume.AddressRes2 = string.Concat(CityRes.Text, ", ", StateRes.Value, zipRes.Text);
+            resume.AddressRes2 = string.Concat(CityRes.Text, ", ", StateRes.Value, " ", zipRes.Text);
             resume.PhoneNumRes = phoneRes.Text.ToString();
             resume.EmailRes = emailAddress.Text;
+            resume.ObjectiveRes = objectiveRes.Text;
+            resume.AbilitySumRes = abilitySum.Text;
 
             if (!JobTitle1.Text.Equals(""))
             {
@@ -181,8 +197,9 @@ namespace LAWorksSite
 
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             var document = new DocumentModel();
-
-            Section section = new Section(document,
+            document.Sections.Add(
+            new Section(document,
+                //Heading
             new Paragraph(document,
                 new Run(document, resume.NameRes)
                 {
@@ -205,41 +222,59 @@ namespace LAWorksSite
                         {
                             Alignment = HorizontalAlignment.Center,
                             LineSpacing = 10,
-                            LineSpacingRule = LineSpacingRule.AtLeast,
+                            LineSpacingRule = LineSpacingRule.Exactly,
                             SpaceAfter = 20
                         }
-                });
-            document.Sections.Add(section);
+                },
 
-
-            section = new Section(document,
+                //Objective
             new Paragraph(document,
                 new Run(document, "Objective")
                 {
                     CharacterFormat = new CharacterFormat()
                     {
-                        Size = 14,
+                        Size = 13.5,
                         Bold = true
                     }
                 },
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak),
-                new Run(document, resume.AddressRes1),
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak),
-                new Run(document, resume.AddressRes2),
+                new Run(document, resume.ObjectiveRes),
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak),
-                new Run(document, "Phone: " + resume.PhoneNumRes),
-                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
-                new Run(document, resume.EmailRes))
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak))
             {
                 ParagraphFormat = new ParagraphFormat
                 {
                     Alignment = HorizontalAlignment.Left,
                     LineSpacing = 10,
-                    LineSpacingRule = LineSpacingRule.AtLeast,
+                    LineSpacingRule = LineSpacingRule.Exactly,
                     SpaceAfter = 20
                 }
-            });
-            document.Sections.Add(section);
+            },
+                //Ability Summary
+            new Paragraph(document,
+                new Run(document, "Ability Summary")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 13.5,
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, resume.AbilitySumRes),                
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak))
+            {
+                ParagraphFormat = new ParagraphFormat
+                {
+                    Alignment = HorizontalAlignment.Left,
+                    LineSpacing = 10,
+                    LineSpacingRule = LineSpacingRule.Exactly,
+                    SpaceAfter = 20
+                }
+            }));
 
             document.Save(resume.NameRes + "Resume.docx");
 
