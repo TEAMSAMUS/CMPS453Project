@@ -228,6 +228,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UploadResume.aspx.cs">
       <DependentUpon>UploadResume.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
