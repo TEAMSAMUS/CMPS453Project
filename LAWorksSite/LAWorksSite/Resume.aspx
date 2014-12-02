@@ -104,21 +104,6 @@
                 </div>
             </div>
             <p>
-                <br /><br />
-                Education Level: 
-            <asp:DropDownList ID="education" runat="server">
-                <asp:ListItem Value="88">High School Equivalency Diploma</asp:ListItem>
-                <asp:ListItem Value="87">High School Diploma</asp:ListItem>
-                <asp:ListItem Value="13">1 Year of College or a Technical or Vocational School</asp:ListItem>
-                <asp:ListItem Value="14">2 Years of College or a Technical or Vocational School</asp:ListItem>
-                <asp:ListItem Value="15">3 Years of College or a Technical or Vocational School</asp:ListItem>
-                <asp:ListItem Value="VC">Vocational School Certificate</asp:ListItem>
-                <asp:ListItem Value="AD">Associate&#39;s Degree</asp:ListItem>
-                <asp:ListItem Value="BD">Bachelor&#39;s Degree</asp:ListItem>
-                <asp:ListItem Value="MD">Master&#39;s Degree</asp:ListItem>
-                <asp:ListItem Value="PD">Doctorate Degree</asp:ListItem>
-                <asp:ListItem Value="SD">Specialized Degree (e.g. MD, DDS)</asp:ListItem>
-            </asp:DropDownList>
                 <br />
                 <br />
                 Work Experience (Most Recent Jobs First): 
@@ -390,10 +375,330 @@
             <br />
             <br />
             <br />
+            <div>
+                Education Level: 
+            <asp:DropDownList ID="education" runat="server">
+                <asp:ListItem Value="88">High School Equivalency Diploma</asp:ListItem>
+                <asp:ListItem Value="87">High School Diploma</asp:ListItem>
+                <asp:ListItem Value="13">1 Year of College or a Technical or Vocational School</asp:ListItem>
+                <asp:ListItem Value="14">2 Years of College or a Technical or Vocational School</asp:ListItem>
+                <asp:ListItem Value="15">3 Years of College or a Technical or Vocational School</asp:ListItem>
+                <asp:ListItem Value="VC">Vocational School Certificate</asp:ListItem>
+                <asp:ListItem Value="AD">Associate&#39;s Degree</asp:ListItem>
+                <asp:ListItem Value="BD">Bachelor&#39;s Degree</asp:ListItem>
+                <asp:ListItem Value="MD">Master&#39;s Degree</asp:ListItem>
+                <asp:ListItem Value="PD">Doctorate Degree</asp:ListItem>
+                <asp:ListItem Value="SD">Specialized Degree (e.g. MD, DDS)</asp:ListItem>
+            </asp:DropDownList>
+                Issuing Institution:
+            <asp:TextBox ID="schoolRes" runat="server" Width="150"></asp:TextBox>
+                Course of Study:
+            <asp:TextBox ID="schoolCourse" runat="server" Width="150"></asp:TextBox>
+            </div>
+            <br />
+            <div>
+                Academic Honors:
+            <asp:TextBox ID="academicHonors" runat="server" TextMode="MultiLine" Width="600"></asp:TextBox>
+            </div>
+            <br />
+            <div>
+                Honors & Activities:
+            <asp:TextBox ID="honorsActivities" runat="server" TextMode="MultiLine" Width="600"></asp:TextBox>
+            </div>
+            <br />
+            <div>
+                Additional Information:
+            <asp:TextBox ID="addInfo" runat="server" TextMode="MultiLine" Width="600"></asp:TextBox>
+            </div>
+            <div>
+                References:
+                <br />
+                <br />
+
+                <div style="border: solid 1px; border-color: black; overflow: hidden; display: inline-table; text-align: left; margin-right: 50px; padding: 1em;">
+                    Name:
+                <asp:TextBox ID="refName1" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    Street Address:
+                <asp:TextBox ID="refAdd1" runat="server" Width="175"></asp:TextBox>
+                    <br />
+                    <br />
+                    City:
+                <asp:TextBox ID="refCity1" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    State/Province:
+                <select id="refState1" runat="server">
+                    <option value="">None Selected</option>
+                    <option value="AA">AF Atl. Coast</option>
+                    <option value="AE">AF East Coast</option>
+                    <option value="AP">AF Pac. Coast</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="GU">Guam</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option selected="selected" value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="MP">N. Mariana Islands</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PW">Palau</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="VI">U.S. Virgin Islands</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+
+                </select>
+                    <br />
+                    <br />
+                    Zip Code:
+                <asp:TextBox ID="refZip1" runat="server" MaxLength="5" Width="50" TextMode="SingleLine"></asp:TextBox>
+                    <br />
+                    <br />
+                    Phone Number:
+                <asp:TextBox ID="refPhone1" runat="server" TextMode="Phone" MaxLength="10" Width="100"></asp:TextBox>
+                    <br />
+                    <br />
+                    Information: 
+                <asp:TextBox ID="refInfo1" runat="server" TextMode="MultiLine"></asp:TextBox>
+
+                </div>
+
+                <div style="border: solid 1px; border-color: black; overflow: hidden; display: inline-table; text-align: left; margin-right: 50px; padding: 1em;">
+                    Name:
+                <asp:TextBox ID="refName2" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    Street Address:
+                <asp:TextBox ID="refAdd2" runat="server" Width="175"></asp:TextBox>
+                    <br />
+                    <br />
+                    City:
+                <asp:TextBox ID="refCity2" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    State/Province:
+                <select id="refState2" runat="server">
+                    <option value="">None Selected</option>
+                    <option value="AA">AF Atl. Coast</option>
+                    <option value="AE">AF East Coast</option>
+                    <option value="AP">AF Pac. Coast</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="GU">Guam</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option selected="selected" value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="MP">N. Mariana Islands</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PW">Palau</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="VI">U.S. Virgin Islands</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+
+                </select>
+                    <br />
+                    <br />
+                    Zip Code:
+                <asp:TextBox ID="refZip2" runat="server" MaxLength="5" Width="50" TextMode="SingleLine"></asp:TextBox>
+                    <br />
+                    <br />
+                    Phone Number:
+                <asp:TextBox ID="refPhone2" runat="server" TextMode="Phone" MaxLength="10" Width="100"></asp:TextBox>
+
+                    <br />
+                    <br />
+                    Information: 
+                <asp:TextBox ID="refInfo2" runat="server" TextMode="MultiLine"></asp:TextBox>
+
+                </div>
+
+                <div style="border: solid 1px; border-color: black; overflow: hidden; display: inline-table; text-align: left; padding: 1em;">
+                    Name:
+                <asp:TextBox ID="refName3" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    Street Address:
+                <asp:TextBox ID="refAdd3" runat="server" Width="175"></asp:TextBox>
+                    <br />
+                    <br />
+                    City:
+                <asp:TextBox ID="refCity3" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    State/Province:
+                <select id="refState3" runat="server">
+                    <option value="">None Selected</option>
+                    <option value="AA">AF Atl. Coast</option>
+                    <option value="AE">AF East Coast</option>
+                    <option value="AP">AF Pac. Coast</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="GU">Guam</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option selected="selected" value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="MP">N. Mariana Islands</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PW">Palau</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="VI">U.S. Virgin Islands</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+
+                </select>
+                    <br />
+                    <br />
+                    Zip Code:
+                <asp:TextBox ID="refZip3" runat="server" MaxLength="5" Width="50" TextMode="SingleLine"></asp:TextBox>
+                    <br />
+                    <br />
+                    Phone Number:
+                <asp:TextBox ID="refPhone3" runat="server" TextMode="Phone" MaxLength="10" Width="100"></asp:TextBox>
+                    <br />
+                    <br />
+                    Information: 
+                <asp:TextBox ID="refInfo3" runat="server" TextMode="MultiLine"></asp:TextBox>
+
+                </div>
+            </div>
+            <br />
+            <br />
         </div>
         <p>
-            <br />
-            <br />
             <asp:Button ID="SubmitResume" runat="server" Text="Build" OnClick="BuildResume" />
             <br />
             <br />
