@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public class SearchResults
+public class Search
 {
 
-    public SearchResults()
+    public Search()
     {
     
     }
@@ -71,7 +71,7 @@ namespace LAWorksSite
 
         protected void Search_Click(object sender, EventArgs e)
         {
-            SearchResults result = new SearchResults();
+            Search result = new Search();
             result.KeywordRes = keyword.Text;
             result.LocationRes = jobLoc.Value;
             result.SalaryRes = salaryRange.SelectedValue;
