@@ -194,6 +194,7 @@ namespace LAWorksSite
             Debug.WriteLine(resume.AddressRes1);
             Debug.WriteLine(resume.AddressRes2);
             Debug.WriteLine(resume.PhoneNumRes);
+            Debug.WriteLine(resume.jobList[0].JobTitle);
 
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             var document = new DocumentModel();
@@ -263,7 +264,7 @@ namespace LAWorksSite
                 },
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak),
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak),
-                new Run(document, resume.AbilitySumRes),                
+                new Run(document, resume.AbilitySumRes),
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak),
                 new SpecialCharacter(document, SpecialCharacterType.LineBreak))
             {
@@ -274,7 +275,72 @@ namespace LAWorksSite
                     LineSpacingRule = LineSpacingRule.Exactly,
                     SpaceAfter = 20
                 }
-            }));
+            },
+                //Employment History
+            new Paragraph(document,
+                new Run(document, "Employment History")
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 13.5,
+                        Bold = true
+                    }
+                })));
+
+            foreach (Job j in resume.jobList)
+            {
+                //Job
+                document.Sections[0].Blocks.Add(
+            new Paragraph(document,
+                new Run(document, j.JobTitle)
+                {
+                    CharacterFormat = new CharacterFormat()
+                    {
+                        Size = 11,
+                        Bold = true
+                    }
+                },
+                new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                new Run(document, j.JobYears + " " + j.CompanyName))
+                 {
+                     ParagraphFormat = new ParagraphFormat
+                     {
+                         Alignment = HorizontalAlignment.Left,
+                         LineSpacing = 10,
+                         LineSpacingRule = LineSpacingRule.Exactly
+                     }
+                 });
+
+                document.Sections[0].Blocks.Add(
+
+                    new Paragraph(document,
+                        new Run(document, j.JobCityState))
+                        {
+                            ParagraphFormat = new ParagraphFormat
+                            {
+                                Alignment = HorizontalAlignment.Right,
+                                LineSpacing = 10,
+                                LineSpacingRule = LineSpacingRule.Exactly
+                            }
+                        });
+
+                document.Sections[0].Blocks.Add(
+
+                    new Paragraph(document,
+                        new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                        new Run(document, j.JobDuties))
+                        {
+                            ParagraphFormat = new ParagraphFormat
+                            {
+                                Alignment = HorizontalAlignment.Left,
+                                LineSpacing = 10,
+                                LineSpacingRule = LineSpacingRule.Exactly,
+                                SpaceAfter = 20
+                            }
+                        });
+            
+            }
+
 
             document.Save(resume.NameRes + "Resume.docx");
 
