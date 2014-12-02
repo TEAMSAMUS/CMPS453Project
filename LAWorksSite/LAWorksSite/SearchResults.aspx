@@ -13,11 +13,11 @@
     </table>
     <table id="jobDetails" runat="server" class="nav-justified"><!-- Various Details about the Job as Described above -->
         <tr>
-            <td id="date" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
-            <td id="jobTitle" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
-            <td id="employer" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
-            <td id="location" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
-            <td id="salary" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
+            <td id="dateM" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
+            <td id="jobTitle" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
+            <td id="employer" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
+            <td id="location" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
+            <td id="salary" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
         </tr>
 
     <!-- Job Specifications / Followed by Teal-Colored Separator-->

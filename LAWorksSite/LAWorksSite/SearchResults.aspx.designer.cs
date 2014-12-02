@@ -22,13 +22,13 @@ namespace LAWorksSite {
         protected global::System.Web.UI.HtmlControls.HtmlTable jobDetails;
         
         /// <summary>
-        /// date control.
+        /// dateM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell date;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell dateM;
         
         /// <summary>
         /// jobTitle control.
