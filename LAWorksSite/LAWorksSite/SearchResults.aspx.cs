@@ -18,7 +18,11 @@ using GemBox.Document;
 
 namespace LAWorksSite
 {
-
+    //Date Last Modified (mm/dd/yyyy)
+    //Job Title
+    //Employer 
+    //Location (city, state)
+    //Salary
 
     public partial class SearchResults : System.Web.UI.Page
     {
