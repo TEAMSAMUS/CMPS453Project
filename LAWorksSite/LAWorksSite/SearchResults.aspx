@@ -11,21 +11,18 @@
             <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Salary</td>
         </tr>
     </table>
-    <table class="nav-justified"><!-- Various Details about the Job as Described above -->
+    <table id="jobDetails" runat="server" class="nav-justified"><!-- Various Details about the Job as Described above -->
         <tr>
-            <td style="border: thin solid #00FFFF">&nbsp;</td>
-            <td style="border: thin solid #00FFFF">&nbsp;</td>
-            <td style="border: thin solid #00FFFF">&nbsp;</td>
-            <td style="border: thin solid #00FFFF">&nbsp;</td>
-            <td style="border: thin solid #00FFFF">&nbsp;</td>
+            <td id="date" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
+            <td id="jobTitle" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
+            <td id="employer" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
+            <td id="location" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
+            <td id="salary" width: 20%; style="border: thin solid #00FFFF">&nbsp;</td>
         </tr>
-    </table>
-    <table class="nav-justified"><!-- Job Specifications / Followed by Teal-Colored Separator-->
+
+    <!-- Job Specifications / Followed by Teal-Colored Separator-->
         <tr>
-            <td style="border-width: thin; border-color: #00FFFF; border-top-style: inherit; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="background-color: #296868; height: 5px; line-height: 5px;">&nbsp;</td>
+            <td id="jobSpecs" colspan="5" style="border-width: thin thin thick thin; border-color: #00FFFF #00FFFF #008080 #00FFFF; border-top-style: inherit; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">&nbsp;</td>
         </tr>
     </table>
     
