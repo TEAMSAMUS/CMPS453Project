@@ -11,7 +11,7 @@
             <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Salary</td>
         </tr>
     </table>
-    <table class="nav-justified">
+    <table class="nav-justified"><!-- Various Details about the Job as Described above -->
         <tr>
             <td style="border: thin solid #00FFFF">&nbsp;</td>
             <td style="border: thin solid #00FFFF">&nbsp;</td>
@@ -20,7 +20,7 @@
             <td style="border: thin solid #00FFFF">&nbsp;</td>
         </tr>
     </table>
-    <table class="nav-justified">
+    <table class="nav-justified"><!-- Job Specifications / Followed by Teal-Colored Separator-->
         <tr>
             <td style="border-width: thin; border-color: #00FFFF; border-top-style: inherit; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">&nbsp;</td>
         </tr>
