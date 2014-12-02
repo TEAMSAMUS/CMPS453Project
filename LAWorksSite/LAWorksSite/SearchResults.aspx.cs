@@ -30,7 +30,23 @@ namespace LAWorksSite
         {
             
         }
+        /*
+        protected void Load_Table(object sender, EventArgs e)
+        {
+            
+            //Array of results from class diagram
+            Table tb = new Table();
+            // placeholder
+            PlaceHolder1.Controls.Add(tb);
+            for(int i = 0; i < 5; i++)
+            {
+                TableRow tr = new TableRow();
+                //Create column 1
+                TableCell td1 = new TableCell();
 
+            }
+        }
+        */
 
     }
 }
