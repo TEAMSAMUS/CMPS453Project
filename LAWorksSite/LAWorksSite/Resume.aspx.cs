@@ -181,7 +181,14 @@ namespace LAWorksSite
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             var document = new DocumentModel();
 
+            
+
+            // Go through each KnownFolder enum entry
+
+
             document.Save("document.docx");
+
+            
 
             
 

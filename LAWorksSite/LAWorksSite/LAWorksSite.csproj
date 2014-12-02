@@ -227,6 +227,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KnownFolders.cs" />
     <Compile Include="UploadResume.aspx.cs">
       <DependentUpon>UploadResume.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
