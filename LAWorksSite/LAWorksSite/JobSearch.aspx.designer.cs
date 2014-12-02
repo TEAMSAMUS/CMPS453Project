@@ -31,13 +31,22 @@ namespace LAWorksSite {
         protected global::System.Web.UI.HtmlControls.HtmlSelect jobLoc;
         
         /// <summary>
-        /// salaryRange control.
+        /// SalaryLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList salaryRange;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SalaryLow;
+        
+        /// <summary>
+        /// SalaryHigh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SalaryHigh;
         
         /// <summary>
         /// education control.
@@ -49,22 +58,13 @@ namespace LAWorksSite {
         protected global::System.Web.UI.WebControls.DropDownList education;
         
         /// <summary>
-        /// hoursButtons control.
+        /// hoursRes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList hoursButtons;
-        
-        /// <summary>
-        /// experienceLevel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList experienceLevel;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect hoursRes;
         
         /// <summary>
         /// CommitSearch control.

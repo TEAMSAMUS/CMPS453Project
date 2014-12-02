@@ -1,30 +1,24 @@
 ﻿<%@ Page Title="Results | Louisiana Works Career Seeker" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SearchResults.aspx.cs" Inherits="LAWorksSite.SearchResults" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <table class="nav-justified">
         <tr>
-            <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Date Last Modified</td>
-            <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Job Title</td>
-            <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Employer</td>
-            <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Location</td>
-            <td style="text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%;">Salary</td>
+            <td style="border-color: #FFFFFF; text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%; border-right-style: solid;">Date Last Modified</td>
+            <td style="border-color: #FFFFFF; text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%; border-right-style: solid;">Job Title</td>
+            <td style="border-color: #FFFFFF; text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%; border-right-style: solid;">Employer</td>
+            <td style="border-color: #FFFFFF; text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%; border-right-style: solid;">Location</td>
+            <td style="border-color: #FFFFFF; text-align: center; color: #FFFFFF; background-color: #296968; height: 22px; width: 20%; border-left-style: solid;">Salary</td>
         </tr>
     </table>
-    <table id="jobDetails" runat="server" class="nav-justified"><!-- Various Details about the Job as Described above -->
-        <tr>
-            <td id="dateM" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
-            <td id="jobTitle" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
-            <td id="employer" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
-            <td id="location" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
-            <td id="salary" style="width: 20%; border: thin solid #00FFFF">&nbsp;</td>
-        </tr>
+    <table id="jobDetails" runat="server" class="nav-justified">
+        <!-- Various Details about the Job as Described above -->
 
-    <!-- Job Specifications / Followed by Teal-Colored Separator-->
-        <tr>
-            <td id="jobSpecs" colspan="5" style="border-width: thin thin thick thin; border-color: #00FFFF #00FFFF #008080 #00FFFF; border-top-style: inherit; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;">&nbsp;</td>
-        </tr>
+
+
     </table>
-    
-    
+    <br />
+    <br />
+
+
 </asp:Content>

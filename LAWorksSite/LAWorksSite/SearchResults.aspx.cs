@@ -11,9 +11,60 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using System.IO;
 using System.Diagnostics;
-using GemBox.Document;
+
+public class Result
+{
+    public Result()
+    {
+
+    }
+
+    private String date;
+    public string Date
+    {
+        get { return date; }
+        set { this.date = value; }
+    }
+
+    private String title;
+    public string Title
+    {
+        get { return title; }
+        set { this.title = value; }
+    }
+
+    private String employer;
+    public string Employer
+    {
+        get { return employer; }
+        set { this.employer = value; }
+    }
+
+    private String location;
+    public string Location
+    {
+        get { return location; }
+        set { this.location = value; }
+    }
+
+    private String salary;
+    public string Salary
+    {
+        get { return salary; }
+        set { this.salary = value; }
+    }
+
+    private String jobSpecs;
+    public string JobSpecs
+    {
+        get { return jobSpecs; }
+        set { this.jobSpecs = value; }
+    }
+
+}
 
 
 namespace LAWorksSite
@@ -26,27 +77,107 @@ namespace LAWorksSite
 
     public partial class SearchResults : System.Web.UI.Page
     {
+
+        List<Result> resultList = new List<Result>();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Load_Table(sender, e);
         }
-        /*
+
         protected void Load_Table(object sender, EventArgs e)
         {
-            
-            //Array of results from class diagram
-            Table tb = new Table();
-            // placeholder
-            PlaceHolder1.Controls.Add(tb);
-            for(int i = 0; i < 5; i++)
-            {
-                TableRow tr = new TableRow();
-                //Create column 1
-                TableCell td1 = new TableCell();
 
+            //Array of results from class diagram
+            //while reading in results
+            //Result res = new Result();
+            //res.Date = resultDate;
+            //res.Title = resultTitle;
+            //res.Employer = resultEmployer;
+            //res.Location = resultLocation;
+            //res.Salary = resultSalary;
+            //res.JobSpecs = jobSpecs;
+            //resultList.Add(res);
+
+            Result res = new Result();
+            res.Date = "resultDate";
+            res.Title = "resultTitle";
+            res.Employer = "resultEmployer";
+            res.Location = "resultLocation";
+            res.Salary = "resultSalary";
+            res.JobSpecs = "jobSpevefocihweluifhlweuhfluiwehfluihweluifliuewhfluwaeflhawleuhfliuwehsfuhics";
+            resultList.Add(res);
+
+            res = new Result();
+            res.Date = "resultDate";
+            res.Title = "resultTitle";
+            res.Employer = "resultEmployer";
+            res.Location = "resultLocation";
+            res.Salary = "resultSalary";
+            res.JobSpecs = "jobSpecs";
+            resultList.Add(res);
+
+            res = new Result();
+            res.Date = "resultDate";
+            res.Title = "resultTitle";
+            res.Employer = "resultEmployer";
+            res.Location = "resultLocation";
+            res.Salary = "resultSalary";
+            res.JobSpecs = "jobSpecs";
+            resultList.Add(res);
+
+
+
+            foreach (Result result in resultList)
+            {
+                HtmlTableRow row = new HtmlTableRow();
+                HtmlTableRow rowFooter = new HtmlTableRow();
+                HtmlTableRow dummyRow = new HtmlTableRow();
+
+                var cell = new HtmlTableCell();
+                cell.InnerText = result.Date;
+                cell.Width = "20%";
+                cell.BorderColor = "#296968";
+                row.Cells.Add(cell);
+                
+                cell = new HtmlTableCell();
+                cell.InnerText = result.Title;
+                cell.Width = "20%";
+                cell.BorderColor = "#296968";
+                row.Cells.Add(cell);
+                
+                cell = new HtmlTableCell();
+                cell.InnerText = result.Employer;
+                cell.Width = "20%";
+                cell.BorderColor = "#296968";
+                row.Cells.Add(cell);
+                
+                cell = new HtmlTableCell();
+                cell.InnerText = result.Location;
+                cell.Width = "20%";
+                cell.BorderColor = "#296968";
+                row.Cells.Add(cell);
+                
+                cell = new HtmlTableCell();
+                cell.InnerText = result.Salary;
+                cell.Width = "20%";
+                cell.BorderColor = "#296968";
+                row.Cells.Add(cell);
+
+                
+
+                var cellFooter = new HtmlTableCell();
+                cellFooter.InnerText = result.JobSpecs;
+                cellFooter.ColSpan = 5;
+                rowFooter.Cells.Add(cellFooter);
+
+                jobDetails.Rows.Add(row);
+                jobDetails.Rows.Add(rowFooter);
+                jobDetails.Rows.Add(dummyRow);
             }
         }
-        */
+
 
     }
 }

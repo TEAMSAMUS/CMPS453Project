@@ -17,6 +17,9 @@
             width: 264px;
             height: 98px;
         }
+        .rowStyle {
+            border: 1px solid #296968;
+        }
     </style>
 
 </head>

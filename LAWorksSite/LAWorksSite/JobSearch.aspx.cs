@@ -27,11 +27,18 @@ public class Search
         set { locationRes = value; }
     }
 
-    private String salaryRes;
-    public string SalaryRes
+    private String salaryLowRes;
+    public string SalaryLowRes
     {
-        get { return salaryRes; }
-        set { salaryRes = value; }
+        get { return salaryLowRes; }
+        set { salaryLowRes = value; }
+    }
+
+    private String salaryHighRes;
+    public string SalaryHighRes
+    {
+        get { return salaryHighRes; }
+        set { salaryHighRes = value; }
     }
 
     private String educationRes;
@@ -74,18 +81,11 @@ namespace LAWorksSite
             Search result = new Search();
             result.KeywordRes = keyword.Text;
             result.LocationRes = jobLoc.Value;
-            result.SalaryRes = salaryRange.SelectedValue;
+            result.SalaryLowRes = SalaryLow.Value;
+            result.SalaryHighRes = SalaryHigh.Value;
             result.EducationRes = education.SelectedValue;
-            result.HoursRes = hoursButtons.SelectedValue;
-            result.ExpRes = experienceLevel.SelectedValue;
+            result.HoursRes = hoursRes.Value;
 
-
-            System.Diagnostics.Debug.WriteLine(result.KeywordRes);
-            System.Diagnostics.Debug.WriteLine(result.LocationRes);
-            System.Diagnostics.Debug.WriteLine(result.SalaryRes);
-            System.Diagnostics.Debug.WriteLine(result.EducationRes);
-            System.Diagnostics.Debug.WriteLine(result.HoursRes);
-            System.Diagnostics.Debug.WriteLine(result.ExpRes);
 
             Response.Redirect("SearchResults.aspx");
             
