@@ -86,7 +86,7 @@ namespace LAWorksSite
             result.EducationRes = education.SelectedValue;
             result.HoursRes = hoursRes.Value;
 
-
+            Session["SearchRes"] = result;
             Response.Redirect("SearchResults.aspx");
             
         }

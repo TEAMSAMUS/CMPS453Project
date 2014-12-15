@@ -100,6 +100,10 @@ namespace LAWorksSite
             //res.JobSpecs = jobSpecs;
             //resultList.Add(res);
 
+            Search results = (Search)Session["SearchRes"];
+
+            Debug.WriteLine(results.KeywordRes);
+
             Result res = new Result();
             res.Date = "resultDate";
             res.Title = "resultTitle";
