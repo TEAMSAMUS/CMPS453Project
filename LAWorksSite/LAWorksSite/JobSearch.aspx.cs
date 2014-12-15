@@ -67,6 +67,9 @@ namespace LAWorksSite
 {
     public partial class JobSearch : System.Web.UI.Page
     {
+
+        List<Result> resultList = new List<Result>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
            if(!IsPostBack)
@@ -86,7 +89,13 @@ namespace LAWorksSite
             result.EducationRes = education.SelectedValue;
             result.HoursRes = hoursRes.Value;
 
-            Session["SearchRes"] = result;
+
+            //Do bot stuff
+
+            //Adds resultList to the session data
+            Session["SearchRes"] = resultList;
+
+
             Response.Redirect("SearchResults.aspx");
             
         }

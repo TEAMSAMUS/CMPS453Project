@@ -78,8 +78,6 @@ namespace LAWorksSite
     public partial class SearchResults : System.Web.UI.Page
     {
 
-        List<Result> resultList = new List<Result>();
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -100,40 +98,12 @@ namespace LAWorksSite
             //res.JobSpecs = jobSpecs;
             //resultList.Add(res);
 
-            Search results = (Search)Session["SearchRes"];
-
-            Debug.WriteLine(results.KeywordRes);
-
-            Result res = new Result();
-            res.Date = "resultDate";
-            res.Title = "resultTitle";
-            res.Employer = "resultEmployer";
-            res.Location = "resultLocation";
-            res.Salary = "resultSalary";
-            res.JobSpecs = "jobSpecs";
-            resultList.Add(res);
-
-            res = new Result();
-            res.Date = "resultDate";
-            res.Title = "resultTitle";
-            res.Employer = "resultEmployer";
-            res.Location = "resultLocation";
-            res.Salary = "resultSalary";
-            res.JobSpecs = "jobSpecs";
-            resultList.Add(res);
-
-            res = new Result();
-            res.Date = "resultDate";
-            res.Title = "resultTitle";
-            res.Employer = "resultEmployer";
-            res.Location = "resultLocation";
-            res.Salary = "resultSalary";
-            res.JobSpecs = "jobSpecs";
-            resultList.Add(res);
+            List<Result> results = (List <Result>)Session["SearchRes"];
 
 
 
-            foreach (Result result in resultList)
+
+            foreach (Result result in results)
             {
                 HtmlTableRow row = new HtmlTableRow();
                 HtmlTableRow rowFooter = new HtmlTableRow();
