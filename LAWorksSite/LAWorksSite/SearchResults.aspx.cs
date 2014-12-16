@@ -8,63 +8,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.IO;
+using System.Windows.Forms;
 using System.Diagnostics;
 
-public class Result
-{
-    public Result()
-    {
 
-    }
-
-    private String date;
-    public string Date
-    {
-        get { return date; }
-        set { this.date = value; }
-    }
-
-    private String title;
-    public string Title
-    {
-        get { return title; }
-        set { this.title = value; }
-    }
-
-    private String employer;
-    public string Employer
-    {
-        get { return employer; }
-        set { this.employer = value; }
-    }
-
-    private String location;
-    public string Location
-    {
-        get { return location; }
-        set { this.location = value; }
-    }
-
-    private String salary;
-    public string Salary
-    {
-        get { return salary; }
-        set { this.salary = value; }
-    }
-
-    private String jobSpecs;
-    public string JobSpecs
-    {
-        get { return jobSpecs; }
-        set { this.jobSpecs = value; }
-    }
-
-}
 
 
 namespace LAWorksSite
@@ -77,7 +33,6 @@ namespace LAWorksSite
 
     public partial class SearchResults : System.Web.UI.Page
     {
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -99,7 +54,6 @@ namespace LAWorksSite
             //resultList.Add(res);
 
             List<Result> results = (List <Result>)Session["SearchRes"];
-
 
 
 

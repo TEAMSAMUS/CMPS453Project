@@ -1,72 +1,68 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
+using System.Diagnostics;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
-using System.Web.UI;
+using System.IO;
 using System.Windows.Forms;
-using System.Web.UI.WebControls;
+using System.Diagnostics;
 
-public class Search
+public class Result
 {
-
-    public Search()
+    public Result()
     {
 
     }
 
-    private String keywordRes;
-    public string KeywordRes
+    private String date;
+    public string Date
     {
-        get { return keywordRes; }
-        set { this.keywordRes = value; }
+        get { return date; }
+        set { this.date = value; }
     }
 
-    private String locationRes;
-    public string LocationRes
+    private String title;
+    public string Title
     {
-        get { return locationRes; }
-        set { locationRes = value; }
+        get { return title; }
+        set { this.title = value; }
     }
 
-    private String salaryLowRes;
-    public string SalaryLowRes
+    private String employer;
+    public string Employer
     {
-        get { return salaryLowRes; }
-        set { salaryLowRes = value; }
+        get { return employer; }
+        set { this.employer = value; }
     }
 
-    private String salaryHighRes;
-    public string SalaryHighRes
+    private String location;
+    public string Location
     {
-        get { return salaryHighRes; }
-        set { salaryHighRes = value; }
+        get { return location; }
+        set { this.location = value; }
     }
 
-    private String educationRes;
-    public string EducationRes
+    private String salary;
+    public string Salary
     {
-        get { return educationRes; }
-        set { educationRes = value; }
+        get { return salary; }
+        set { this.salary = value; }
     }
 
-    private String hoursRes;
-    public string HoursRes
+    private String jobSpecs;
+    public string JobSpecs
     {
-        get { return hoursRes; }
-        set { hoursRes = value; }
+        get { return jobSpecs; }
+        set { this.jobSpecs = value; }
     }
 
-    private String expRes;
-    public string ExpRes
-    {
-        get { return expRes; }
-        set { expRes = value; }
-    }
 }
 
 namespace LAWorksSite
@@ -74,29 +70,12 @@ namespace LAWorksSite
     public partial class JobSearch : System.Web.UI.Page
     {
 
-        List<Result> resultList = new List<Result>();
-
         /********************************************************************
-        *	Searchbot														*
-        *	Executes a search on the LAWorks site and returns the results.	*
-        ********************************************************************/
-        //class Searchbot// : System.Windows.Forms.ApplicationContext
-        //{
-        /************************
-        *	Default Constructor	*
-        ************************/
-        /*public Searchbot(List<Result> resultList)
-        {
-            myResultList = resultList;
-        }*/
-
-
-        /********************************************************************
-        *	Start_Thread starts the thread the bot runs on, 				*
-        *	Preconditions: Name an Password are valid LAHire accounts, and	*
-        *		the site hasn't changed navigation links and html elements.	*
-        *	Postconditions: The resume would have been uploaded to the site.*
-        ********************************************************************/
+*	Start_Thread starts the thread the bot runs on, 				*
+*	Preconditions: Name an Password are valid LAHire accounts, and	*
+*		the site hasn't changed navigation links and html elements.	*
+*	Postconditions: The resume would have been uploaded to the site.*
+********************************************************************/
         [STAThread]
         public void Start_Thread()
         {
@@ -110,7 +89,7 @@ namespace LAWorksSite
         /********************************************************************
         *	Search Criteria													*
         *		These are some options for the search.						*
-        *		Keyword: search by relevant keyword. "Nursing" is valid.	*
+        *		KeywordVal: search by relevant KeywordVal. "Nursing" is valid.	*
         *		City: search by Louisiana City. "Lafayette" is valid.		*
         *		SalaryRange: exclude salaries out of range. Uses preset		*
         *			salary ranges, actual Salary values are not valid.		*
@@ -140,7 +119,7 @@ namespace LAWorksSite
         *			"6":	PRN (As Needed)									*
         *			"9":	Information Not Provided						*
         ********************************************************************/
-        public string Keyword = "Nursing", City = "Lafayette", SalaryLowVal = "1", SalaryHighVal = "20", EducationLevel = "NH", Time = "9";
+        public string KeywordVal = "Computer Science", City = "Lafayette", SalaryLowVal = "1", SalaryHighVal = "20", EducationLevel = "NH", Time = "9";
 
 
 
@@ -151,8 +130,8 @@ namespace LAWorksSite
         ************************************************/
         private string botName = "iancallaway", botPass = "#b4DMRx8KwoQ";
 
-        private Regex dateRegex = new Regex(@"\d\d/\d\d/\d\d");
-        private Regex titleRegex = new Regex(@".*?-");//""[^""]*""
+        private Regex dateRegex = new Regex(@"\d\d/\d\d/\d\d\d\d");
+        private Regex titleRegex = new Regex(@"<.*?>");//""[^""]*""
 
         /****************************************************
         *	Search_Document									*
@@ -171,6 +150,7 @@ namespace LAWorksSite
         *		which are the pages in the result building	*
         *		processs, the bot will terminate the thread.*
         ****************************************************/
+        [STAThread]
         private void Search_Document(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             WebBrowser www = (WebBrowser)sender;
@@ -198,12 +178,12 @@ namespace LAWorksSite
                     www.Document.GetElementById("ff_areatypeJS").SetAttribute("value", "92");
 
                     www.Document.GetElementById("ff_cityJS").SetAttribute("value", City);
-                    //www.Document.GetElementById("keyword").SetAttribute("value", Keyword);
+                    //www.Document.GetElementById("keyword").SetAttribute("value", KeywordVal);
                     www.Document.GetElementById("cboEdulevel").SetAttribute("value", EducationLevel);//drop down menu
                     //www.Document.GetElementById("salaryrange").SetAttribute("value", SalaryRange);//high
                     //www.Document.GetElementById("cboTimespan").SetAttribute("value", Time);//time
 
-                    www.Document.GetElementById("ff_advjob_keyword").SetAttribute("value", Keyword);
+                    www.Document.GetElementById("ff_advjob_keyword").SetAttribute("value", KeywordVal);
                     www.Document.GetElementById("cboSalaryLow").SetAttribute("value", SalaryLowVal);//low
                     www.Document.GetElementById("cboSalaryHigh").SetAttribute("value", SalaryHighVal);//high
                     www.Document.GetElementById("cboJobTime").SetAttribute("value", Time);//time
@@ -224,8 +204,7 @@ namespace LAWorksSite
                             for (int i = 0; iterator.NextSibling != null; i++)
                             {
                                 iterator = iterator.NextSibling;
-                                if (
-                                    iterator.FirstChild != null
+                                if (iterator.FirstChild != null
                                     && iterator.FirstChild.InnerHtml != null
                                         && iterator.FirstChild.NextSibling != null
                                         && iterator.FirstChild.NextSibling.InnerHtml != null
@@ -233,28 +212,30 @@ namespace LAWorksSite
                                             && iterator.FirstChild.NextSibling.NextSibling.InnerHtml != null
                                                 && iterator.FirstChild.NextSibling.NextSibling.NextSibling != null
                                                 && iterator.FirstChild.NextSibling.NextSibling.NextSibling.InnerHtml != null
+                                                    && iterator.FirstChild.NextSibling.FirstChild != null
+                                                    && iterator.FirstChild.NextSibling.FirstChild.InnerHtml != null
                                     )
                                 {
                                     Match dateMatch = dateRegex.Match(iterator.FirstChild.InnerHtml);
                                     if (dateMatch.Success)
                                     {
-                                        Match titleMatch = titleRegex.Match(iterator.FirstChild.NextSibling.FirstChild.InnerHtml);
-                                        if (titleMatch.Success)
+                                        Debug.WriteLine(iterator.FirstChild.NextSibling.FirstChild.InnerHtml);
+                                        string myTitle = iterator.FirstChild.NextSibling.FirstChild.InnerHtml;
+                                        Match titleMatch = titleRegex.Match(myTitle);
+                                        while(titleMatch.Success)
                                         {
-                                            Result result = new Result();
-                                            result.Date = dateMatch.Value;
-                                            result.Title = titleMatch.Value.Substring(0, titleMatch.Value.Length - 1);
-                                            result.Employer = iterator.FirstChild.NextSibling.NextSibling.InnerHtml.Substring(0, iterator.FirstChild.NextSibling.NextSibling.InnerHtml.Length - 6);
-                                            result.Salary = iterator.FirstChild.NextSibling.NextSibling.NextSibling.InnerHtml;
-                                            result.Location = iterator.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerHtml;
-                                            resultList.Add(result);
-                                            Debug.WriteLine(
-                                                dateMatch.Value + "\t" +
-                                                titleMatch.Value.Substring(0, titleMatch.Value.Length - 1) + "\t" +
-                                                iterator.FirstChild.NextSibling.NextSibling.InnerHtml.Substring(0, iterator.FirstChild.NextSibling.NextSibling.InnerHtml.Length - 6) + "\t" +
-                                                iterator.FirstChild.NextSibling.NextSibling.NextSibling.InnerHtml + "\t" +
-                                                iterator.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerHtml);
+                                            myTitle = titleRegex.Replace(myTitle, "");
+                                            titleMatch = titleRegex.Match(myTitle);
                                         }
+                                        Result result = new Result();
+                                        result.Date = dateMatch.Value;
+                                        //result.Title = iterator.FirstChild.NextSibling.FirstChild.FirstChild.InnerHtml;
+                                        result.Title = myTitle;
+                                        //result.Title = iterator.FirstChild.NextSibling.FirstChild.FirstChild.InnerHtml;
+                                        result.Employer = iterator.FirstChild.NextSibling.NextSibling.InnerHtml.Substring(0, iterator.FirstChild.NextSibling.NextSibling.InnerHtml.Length - 6);
+                                        result.Location = iterator.FirstChild.NextSibling.NextSibling.NextSibling.InnerHtml;
+                                        result.Salary = iterator.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerHtml;
+                                        resultList.Add(result);
                                     }
                                 }
                                 //results[i] = new Result();
@@ -265,7 +246,14 @@ namespace LAWorksSite
                         }
                     }
                     Debug.Write("Done");
-                    Response.Redirect("SearchResults.aspx");
+
+                    //Server.ClearError();
+                    
+                    
+                    //Response.Clear();
+                    //Context.ApplicationInstance.CompleteRequest();
+                    Session["SearchRes"] = resultList;
+                    _blocker.Set();
                     www.Dispose();
                     System.Windows.Forms.Application.ExitThread();
                     break;
@@ -278,6 +266,7 @@ namespace LAWorksSite
         *	Back_Thread									*
         *	The thread to be started from Start_Thread	*
         ************************************************/
+        [STAThread]
         private void Back_Thread()
         {
             Debug.WriteLine("thread");
@@ -295,35 +284,41 @@ namespace LAWorksSite
                 }
             Thread.CurrentThread.Join();
         }
-        //}//*/
 
+        AutoResetEvent _blocker = new AutoResetEvent(false);
+        List<Result> resultList = new List<Result>();
+
+        [STAThread]
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                keyword.Text = "";
-
-            }
+           if(!IsPostBack)
+           {
+               keyword.Text = "";
+               
+           }
         }
 
+        [STAThread]
         protected void Search_Click(object sender, EventArgs e)
         {
-            Search search = new Search();
-            search.KeywordRes = keyword.Text;
-            search.LocationRes = jobLoc.Text;
-            search.SalaryLowRes = SalaryLow.Value;
-            search.SalaryHighRes = SalaryHigh.Value;
-            search.EducationRes = education.SelectedValue;
-            search.HoursRes = hoursRes.Value;
+            
 
-
-
+            KeywordVal = keyword.Text;
+            City = jobLoc.Text;
+            SalaryLowVal = SalaryLow.Value;
+            SalaryHighVal = SalaryHigh.Value;
+            EducationLevel = education.SelectedValue;
+            Time = hoursRes.Value;
 
             Start_Thread();
+            //Do bot stuff
 
-            Session["SearchRes"] = resultList;
-            //Response.Redirect("SearchResults.aspx");
-
+            //Adds resultList to the session data
+            //Session["SearchRes"] = resultList;
+            _blocker.WaitOne();
+            HttpContext.Current.Response.Redirect("SearchResults.aspx");
+            
+            
         }
 
     }
